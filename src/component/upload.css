@@ -1,0 +1,42 @@
+.upload-title {
+    font-size: 30px;
+    margin-right: 30px;
+}
+
+.filebox {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+.filebox label {
+    position: relative;
+    padding: .5em .75em;
+    color: #fff;
+    font-size: inherit;
+    line-height: normal;
+    background-color: #d11507;
+    cursor: pointer;
+    border: 1px solid #ff0000;
+    border-radius: .25em;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+  }
+  
+  .filebox label:hover {
+    background-color: #ff0000;
+  }
+  
+  .filebox label:active {
+    background-color: #ff0000;
+  }
+  
+  .filebox input[type="file"] {
+    position: relative;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
