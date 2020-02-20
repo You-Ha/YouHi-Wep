@@ -1,6 +1,7 @@
 .nav-wrapper {
     display: flex;
-    /* justify-content: center; */
+    background-color: lightgray;
+    border-bottom: 1px black;
 }
 
 .nav-logo {
@@ -16,6 +17,8 @@
     margin-top: 10px;
     margin-left: 420px;
     font-size: 17px;
+    font-weight: 900;
+    color: black;
 }
 
 .nav-link {
