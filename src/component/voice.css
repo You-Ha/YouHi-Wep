@@ -1,0 +1,9 @@
+.voice-filter {
+    position: relative;
+    overflow: scroll;
+    width: 750px;
+    height: 300px;
+    border: outset 3px lightgray;
+    left: 930px;
+    bottom: 260px;
+}

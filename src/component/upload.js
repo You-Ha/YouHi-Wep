@@ -9,7 +9,7 @@ const Upload = () => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
-    // <div className ="box-wrapper">
+    <div className="box-wrapper">
       <div {...getRootProps()} className="upload-wrapper">
         <input {...getInputProps()} className="upload-box" />
         {isDragActive ? (
@@ -20,15 +20,13 @@ const Upload = () => {
           </div>
         )}
       </div>
-    // </div>
+      <div className="text-wrapper">
+        <div>주의 사항을 입력하3 </div>
+        <div>쓸내용 있으면 입력하3</div>
+        <div>아 잠마렵다</div>
+      </div>
+    </div>
   );
-  // return (
-  //     <div className="filebox">
-  //         <div className = "upload-title">동영상 업로드 하기</div>
-  //         <label for="ex_file">업로드</label>
-  //         <input type="file" id="ex_file"/>
-  //     </div>
-  // );
 };
 
 export default Upload;

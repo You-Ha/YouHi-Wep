@@ -1,0 +1,9 @@
+.video-filter {
+    width: 750px;
+    height: 450px;
+    overflow: scroll;
+    position: relative;
+    border: outset 3px lightgray;
+    left: 930px;
+    bottom: 1040px;
+}

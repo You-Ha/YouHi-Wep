@@ -1,6 +1,9 @@
 import React from "react";
 import Navbar from "./component/navbar";
 import Upload from "./component/upload";
+import Text from "./component/text";
+import Video from "./component/video";
+import Voice from "./component/voice";
 
 function App() {
 //   fetch ("https://naveropenapi.apigw.ntruss.com/recog/v1/stt?lang=${language}")
@@ -43,6 +46,8 @@ function App() {
     <div>
       <Navbar/>
       <Upload/>
+      <Video/>
+      <Voice/>
     </div>
   )
 
