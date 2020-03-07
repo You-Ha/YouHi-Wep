@@ -46,6 +46,7 @@ function App() {
     <div>
       <Navbar/>
       <Upload/>
+      <Text/>
       <Video/>
       <Voice/>
     </div>

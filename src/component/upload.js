@@ -20,9 +20,6 @@ const Upload = () => {
           </div>
         )}
       </div>
-      <div className="text-wrapper">
-        <div>주의 사항을 입력하세요. </div>
-      </div>
     </div>
   );
 };

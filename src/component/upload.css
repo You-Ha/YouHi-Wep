@@ -45,8 +45,8 @@
 .upload-wrapper {
     display: flex;
     justify-content: center;
-    width: 750px;
-    height: 500px;
+    width: 900px;
+    height: 503px;
     margin-left: 150px;
     margin-top: 150px;
 }
@@ -64,18 +64,15 @@
     vertical-align: middle;
 }
 
+/*
 .text-wrapper {
     display: flex;
     flex-direction: column;
     border: outset 3px lightgray;
     font-size: 20px;
-    width: 750px;
+    width: 894px;
     height: 200px;
     margin-left: 150px;
     margin-top: 25px;
 }
-
-.box-wrapper {
-  height: 734;
-}
-
+*/
