@@ -10,14 +10,13 @@ const Upload = () => {
 
   return (
     <div className="box-wrapper">
+      <div id="upload_title">영상 업로드</div>
       <div {...getRootProps()} className="upload-wrapper">
         <input {...getInputProps()} className="upload-box" />
         {isDragActive ? (
           <p>파일을 드래그 해주세요.</p>
         ) : (
-          <div className="upload-box">
-            파일을 여기로 끌고 오거나 클릭해서 파일 선택하세요.
-          </div>
+          <div className="upload-box"></div>
         )}
       </div>
     </div>

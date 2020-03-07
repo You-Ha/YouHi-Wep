@@ -1,12 +1,13 @@
-import React from 'react';
-import './video.css';
+import React from "react";
+import "./video.css";
 
 const Video = () => {
-    return (
-        <div className = "voice-filter">
-            음성필터
-        </div>
-    )
-}
+  return (
+    <div>
+      <div id="videoFilter_title">영상 필터</div>
+      <div className="video-filter"></div>
+    </div>
+  );
+};
 
 export default Video;

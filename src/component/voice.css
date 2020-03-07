@@ -1,9 +1,24 @@
 .voice-filter {
-    position: relative;
-    overflow: scroll;
-    width: 900px;
-    height: 352px;
-    border: outset 3px lightgray;
-    left: 1065px;
-    bottom: 359px;
+  position: relative;
+  /* overflow: scroll; */
+  width: 900px;
+  height: 356px;
+  border: 1px solid #d1d5da;
+  border-top: none;
+  left: 1065px;
+  bottom: 882px;
+}
+
+#voiceFilter_title {
+  display: block;
+  position: relative;
+  left: 1065px;
+  bottom: 881px;
+  background-color: #f1f8ff;
+  width: 866px;
+  border: 1px solid;
+  border-color: #c8e1ff;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 14px;
 }

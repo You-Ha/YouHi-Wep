@@ -1,10 +1,25 @@
 .text-wrapper {
     display: flex;
     flex-direction: column;
-    border: outset 3px lightgray;
+    border: 1px solid #d1d5da;
+    border-top: none;
     font-size: 20px;
-    width: 894px;
+    width: 898px;
     height: 300px;
     margin-left: 150px;
     margin-top: 25px;
+}
+
+#text_title {
+  display:block;
+  position: relative;
+  left:150px;
+  top:25px;
+  background-color: #f1f8ff;
+  width:866px;
+  border: 1px solid;
+  border-color: #c8e1ff;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 14px;
 }
