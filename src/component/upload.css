@@ -52,7 +52,9 @@
 }
 
 .upload-box {
-    background-image: url("../img/upload_back.png");
+    background-image: url("../img/upload.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
     width: 100%;
     height: 100%;
     font-size: 20px;
@@ -71,5 +73,9 @@
     height: 200px;
     margin-left: 150px;
     margin-top: 25px;
+}
+
+.box-wrapper {
+  height: 734;
 }
 
