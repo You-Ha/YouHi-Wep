@@ -17,7 +17,14 @@ const Video = () => {
             />
           )}
         >
-          <p>0</p>
+          <p>
+            <div className="filteredVideo-order">1</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
           <p>1</p>
           <p>2</p>
           <p>3</p>
