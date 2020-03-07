@@ -5,7 +5,7 @@ import "./video.css";
 const Video = () => {
   return (
     <div>
-      <div id="videoFilter_title">영상 필터</div>
+      <div id="videoFilter-title">영상 필터</div>
       <div className="video-filter">
         <Scrollbars
           style={{ height: 450 }}
@@ -25,27 +25,78 @@ const Video = () => {
               alt=""
             />
           </p>
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
-          <p>4</p>
-          <p>5</p>
-          <p>6</p>
-          <p>7</p>
-          <p>8</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
-          <p>9</p>
+          <p>
+            <div className="filteredVideo-order">2</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
+          <p>
+            <div className="filteredVideo-order">3</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
+          <p>
+            <div className="filteredVideo-order">4</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
+          <p>
+            <div className="filteredVideo-order">5</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
+          <p>
+            <div className="filteredVideo-order">6</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
+          <p>
+            <div className="filteredVideo-order">7</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
+          <p>
+            <div className="filteredVideo-order">8</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
+          <p>
+            <div className="filteredVideo-order">9</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
+          <p>
+            <div className="filteredVideo-order">10</div>
+            <img
+              className="filteredVideo"
+              src={require("../img/upload.png")}
+              alt=""
+            />
+          </p>
         </Scrollbars>
       </div>
     </div>

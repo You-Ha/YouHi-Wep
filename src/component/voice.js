@@ -5,7 +5,7 @@ import "./voice.css";
 const Voice = () => {
   return (
     <div>
-      <div id="voiceFilter_title">음성 필터</div>
+      <div id="voiceFilter-title">음성 필터</div>
       <div className="voice-filter">
         <Scrollbars
           style={{ height: 356 }}

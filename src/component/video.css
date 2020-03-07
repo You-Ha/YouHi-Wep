@@ -11,7 +11,7 @@
   bottom: 903px;
 }
 
-#videoFilter_title {
+#videoFilter-title {
   display:block;
   position: relative;
   left: 1065px;
@@ -26,14 +26,17 @@
 }
 
 .filteredVideo {
-  width: 10%;
+  width: 40%;
   position: sticky;
-  left: 39px;
+  left: 55px;
 }
 
 .filteredVideo-order {
-  display: inline;
+  display: inline-block;
   position: relative;
   left: 9px;
-  bottom: 30px;
+  bottom: 135px;
+  font-size: 25px;
+  width: 30px;
+  text-align: center;
 }

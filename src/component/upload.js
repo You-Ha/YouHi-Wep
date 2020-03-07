@@ -10,7 +10,7 @@ const Upload = () => {
 
   return (
     <div className="box-wrapper">
-      <div id="upload_title">영상 업로드</div>
+      <div id="upload-title">영상 업로드</div>
       <div {...getRootProps()} className="upload-wrapper">
         <input {...getInputProps()} className="upload-box" />
         {isDragActive ? (
