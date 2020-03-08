@@ -26,9 +26,11 @@
 }
 
 .filteredVideo {
-  width: 40%;
+  width: 450px;
+  height: 270px;
   position: sticky;
   left: 55px;
+  border: 1px solid #d1d5da;
 }
 
 .filteredVideo-order {
@@ -40,3 +42,4 @@
   width: 30px;
   text-align: center;
 }
+

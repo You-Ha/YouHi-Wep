@@ -24,6 +24,7 @@ const Video = () => {
               src={require("../img/upload.png")}
               alt=""
             />
+            <span>안녕?</span>
           </p>
           <p>
             <div className="filteredVideo-order">2</div>
