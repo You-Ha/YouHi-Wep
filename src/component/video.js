@@ -17,7 +17,7 @@ const Video = () => {
             />
           )}
         >
-          <p>
+          <div>
             <div className="filteredVideo-order">1</div>
             <img
               className="filteredVideo"
@@ -25,79 +25,79 @@ const Video = () => {
               alt=""
             />
             <span>안녕?</span>
-          </p>
-          <p>
+          </div>
+          <div>
             <div className="filteredVideo-order">2</div>
             <img
               className="filteredVideo"
               src={require("../img/upload.png")}
               alt=""
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <div className="filteredVideo-order">3</div>
             <img
               className="filteredVideo"
               src={require("../img/upload.png")}
               alt=""
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <div className="filteredVideo-order">4</div>
             <img
               className="filteredVideo"
               src={require("../img/upload.png")}
               alt=""
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <div className="filteredVideo-order">5</div>
             <img
               className="filteredVideo"
               src={require("../img/upload.png")}
               alt=""
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <div className="filteredVideo-order">6</div>
             <img
               className="filteredVideo"
               src={require("../img/upload.png")}
               alt=""
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <div className="filteredVideo-order">7</div>
             <img
               className="filteredVideo"
               src={require("../img/upload.png")}
               alt=""
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <div className="filteredVideo-order">8</div>
             <img
               className="filteredVideo"
               src={require("../img/upload.png")}
               alt=""
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <div className="filteredVideo-order">9</div>
             <img
               className="filteredVideo"
               src={require("../img/upload.png")}
               alt=""
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <div className="filteredVideo-order">10</div>
             <img
               className="filteredVideo"
               src={require("../img/upload.png")}
               alt=""
             />
-          </p>
+          </div>
         </Scrollbars>
       </div>
     </div>
