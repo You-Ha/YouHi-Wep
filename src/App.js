@@ -14,8 +14,8 @@ function App() {
 
   // const clientId = "kzs32rf8eb";
   // const clientSecret = "jPe08G68kklqMOHBzjEl1QUMCh6eoTooUWNs5DZH";
-
-  // // language => 언어 코드 ( Kor, Jpn, Eng, Chn )
+  // sibal
+  // // language => ?�어 코드 ( Kor, Jpn, Eng, Chn )
   // function stt(language, filePath) {
   //   const url = `https://naveropenapi.apigw.ntruss.com/recog/v1/stt?lang=${language}`;
   //   const requestConfig = {
