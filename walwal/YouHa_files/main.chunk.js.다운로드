@@ -11,7 +11,25 @@
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".App {\r\n  margin-bottom: 150px;\r\n}\r\n\r\n.Total {\r\n  display: flex;\r\n  flex: 1 1 auto;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\r\n  margin-top: 50px;\r\n}\r\n\r\n/*\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n@media (prefers-reduced-motion: no-preference) {\r\n  .App-logo {\r\n    animation: App-logo-spin infinite 20s linear;\r\n  }\r\n}\r\n\r\n.App-header {\r\n  background-color: #282c34;\r\n  min-height: 100vh;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: calc(10px + 2vmin);\r\n  color: white;\r\n}\r\n\r\n.App-link {\r\n  color: #61dafb;\r\n}\r\n\r\n@keyframes App-logo-spin {\r\n  from {\r\n    transform: rotate(0deg);\r\n  }\r\n  to {\r\n    transform: rotate(360deg);\r\n  }\r\n} */\r\n", ""]);
+exports.push([module.i, ".App {\r\n  margin-bottom: 150px;\r\n}\r\n\r\n.Total {\r\n  /* display: flex;\r\n  flex: 1 1 auto;\r\n  justify-content: center;\r\n  flex-wrap: wrap; */\r\n  margin-top: 50px;\r\n}\r\n\r\n/*\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n@media (prefers-reduced-motion: no-preference) {\r\n  .App-logo {\r\n    animation: App-logo-spin infinite 20s linear;\r\n  }\r\n}\r\n\r\n.App-header {\r\n  background-color: #282c34;\r\n  min-height: 100vh;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: calc(10px + 2vmin);\r\n  color: white;\r\n}\r\n\r\n.App-link {\r\n  color: #61dafb;\r\n}\r\n\r\n@keyframes App-logo-spin {\r\n  from {\r\n    transform: rotate(0deg);\r\n  }\r\n  to {\r\n    transform: rotate(360deg);\r\n  }\r\n} */\r\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/component/dropzone/Dropzone.css":
+/*!************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/component/dropzone/Dropzone.css ***!
+  \************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".Dropzone {\r\n  height: 200px;\r\n  width: 200px;\r\n  background-color: #fff;\r\n  border: 2px dashed rgb(187, 186, 186);\r\n  border-radius: 50%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  flex-direction: column;\r\n  font-size: 16px;\r\n}\r\n\r\n.Highlight {\r\n  background-color: rgb(188, 185, 236);\r\n}\r\n\r\n.Icon {\r\n  opacity: 0.3;\r\n  height: 64px;\r\n  width: 64px;\r\n}\r\n\r\n.FileInput {\r\n  display: none;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -30,6 +48,24 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.i, "/*\r\n.nav-logo {\r\n    width: 200px;\r\n    height: 50px;\r\n    margin-left: 150px;\r\n}\r\n\r\n.nav-search {\r\n    display: flex;\r\n    width : 500px;\r\n    height : 30px;\r\n    margin-top: 10px;\r\n    margin-left: 420px;\r\n    font-size: 17px;\r\n    font-weight: 900;\r\n    color: black;\r\n}\r\n\r\n.nav-link {\r\n    text-align: center;\r\n    vertical-align: middle;\r\n    text-decoration: none;\r\n    color: black;\r\n    font-size: 20px;\r\n    margin-top: 14px;\r\n    margin-left: 300px;\r\n} */\r\n\r\n.nav-wrapper {\r\n  display: flex;\r\n  justify-content: left;\r\n  background-color: #24292e;\r\n}\r\n\r\n#project-name {\r\n  padding: 12px;\r\n  font-size: 30px;\r\n  font-weight: 900;\r\n  color: white;\r\n}\r\n\r\n#main-logo {\r\n  height: 65px;\r\n}   ", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/component/progress/Progress.css":
+/*!************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/component/progress/Progress.css ***!
+  \************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".ProgressBar {\r\n  width: 100%;\r\n  height: 8px;\r\n  background-color: rgb(183, 155, 229);\r\n  border-radius: 5px;\r\n}\r\n\r\n.Progress {\r\n  background-color: rgba(103, 58, 183, 1);\r\n  height: 100%;\r\n  margin: 0;\r\n  border-radius: 5px;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -63,12 +99,9 @@ module.exports = exports;
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../img/upload2.png */ "./src/img/upload2.png");
 exports = ___CSS_LOADER_API_IMPORT___(false);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, "/* .filebox {\r\n    display: flex;\r\n    justify-content: center;\r\n    margin-top: 200px;\r\n}\r\n.filebox label {\r\n    position: relative;\r\n    padding: .5em .75em;\r\n    color: #fff;\r\n    font-size: inherit;\r\n    line-height: normal;\r\n    background-color: #d11507;\r\n    cursor: pointer;\r\n    border: 1px solid #ff0000;\r\n    border-radius: .25em;\r\n    -webkit-transition: background-color 0.2s;\r\n    transition: background-color 0.2s;\r\n }\r\n  \r\n  .filebox label:hover {\r\n    background-color: #ff0000;\r\n  }\r\n  \r\n  .filebox label:active {\r\n    background-color: #ff0000;\r\n  }\r\n  \r\n  .filebox input[type=\"file\"] {\r\n    position: relative;\r\n    width: 1px;\r\n    height: 1px;\r\n    padding: 0;\r\n    margin: -1px;\r\n    overflow: hidden;\r\n    clip: rect(0, 0, 0, 0);\r\n    border: 0;\r\n  } */\r\n\r\n.box-wrapper {\r\n  height: 488px;\r\n}\r\n\r\n.upload-wrapper {\r\n    width: 1111px;\r\n    height: 570px;\r\n    margin-right: 45px;\r\n}\r\n\r\n#upload-box {\r\n    background-color: #eeeeee;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    background-repeat: no-repeat;\r\n    background-position: 50%;\r\n    width: 100%;\r\n    height: 100%;\r\n    font-size: 20px;\r\n    border: 1px solid #d1d5da;\r\n    border-top: none;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n#upload-title {\r\n  background-color: #f1f8ff;\r\n  width:1079px;\r\n  border: 1px solid #c8e1ff;\r\n  padding: 8px 16px;\r\n  font-weight: 700;\r\n  font-size: 14px;\r\n}", ""]);
+exports.push([module.i, "/* /* .filebox {\r\n    display: flex;\r\n    justify-content: center;\r\n    margin-top: 200px;\r\n}\r\n.filebox label {\r\n    position: relative;\r\n    padding: .5em .75em;\r\n    color: #fff;\r\n    font-size: inherit;\r\n    line-height: normal;\r\n    background-color: #d11507;\r\n    cursor: pointer;\r\n    border: 1px solid #ff0000;\r\n    border-radius: .25em;\r\n    -webkit-transition: background-color 0.2s;\r\n    transition: background-color 0.2s;\r\n }\r\n  \r\n  .filebox label:hover {\r\n    background-color: #ff0000;\r\n  }\r\n  \r\n  .filebox label:active {\r\n    background-color: #ff0000;\r\n  }\r\n  \r\n  .filebox input[type=\"file\"] {\r\n    position: relative;\r\n    width: 1px;\r\n    height: 1px;\r\n    padding: 0;\r\n    margin: -1px;\r\n    overflow: hidden;\r\n    clip: rect(0, 0, 0, 0);\r\n    border: 0;\r\n  } \r\n\r\n.box-wrapper {\r\n  height: 488px;\r\n}\r\n\r\n.upload-wrapper {\r\n    width: 1111px;\r\n    height: 570px;\r\n    margin-right: 45px;\r\n}\r\n\r\n#upload-box {\r\n    background-color: #eeeeee;\r\n    background-image: url(\"../img/upload2.png\");\r\n    background-repeat: no-repeat;\r\n    background-position: 50%;\r\n    width: 100%;\r\n    height: 100%;\r\n    font-size: 20px;\r\n    border: 1px solid #d1d5da;\r\n    border-top: none;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n#upload-title {\r\n  background-color: #f1f8ff;\r\n  width:1079px;\r\n  border: 1px solid #c8e1ff;\r\n  padding: 8px 16px;\r\n  font-weight: 700;\r\n  font-size: 14px;\r\n} */\r\n\r\n.Upload {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex: 1 1;\r\n  align-items: flex-start;\r\n  text-align: left;\r\n  overflow: hidden;\r\n}\r\n\r\n.Content {\r\n  display: flex;\r\n  flex-direction: row;\r\n  padding-top: 16px;\r\n  box-sizing: border-box;\r\n  width: 100%;\r\n}\r\n\r\n.Files {\r\n  margin-left: 32px;\r\n  align-items: flex-start;\r\n  justify-items: flex-start;\r\n  flex: 1 1;\r\n  overflow-y: auto;\r\n}\r\n\r\n.Actions {\r\n  display: flex;\r\n  flex: 1 1;\r\n  width: 100%;\r\n  align-items: flex-end;\r\n  flex-direction: column;\r\n  margin-top: 32px;\r\n}\r\n\r\n.Title {\r\n  margin-bottom: 32px;\r\n  color: #555;\r\n}\r\n\r\n.Filename {\r\n  margin-bottom: 8px;\r\n  font-size: 16px;\r\n  color: #555;\r\n}\r\n\r\n.Row {\r\n  display: flex;\r\n  flex: 1 1;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  height: 50px;\r\n  padding: 8px;\r\n  overflow: hidden;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.CheckIcon {\r\n  opacity: 0.5;\r\n  margin-left: 32px;\r\n}\r\n\r\n.ProgressWrapper {\r\n  display: flex;\r\n  flex: 1 1;\r\n  flex-direction: row;\r\n  align-items: center;\r\n}\r\n\r\nbutton {\r\n  font-family: \"Roboto medium\", sans-serif;\r\n  font-size: 14px;\r\n  display: inline-block;\r\n  height: 36px;\r\n  min-width: 88px;\r\n  padding: 6px 16px;\r\n  line-height: 1.42857143;\r\n  text-align: center;\r\n  white-space: nowrap;\r\n  vertical-align: middle;\r\n  touch-action: manipulation;\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  user-select: none;\r\n  border: 0;\r\n  border-radius: 2px;\r\n  background: rgba(103, 58, 183, 1);\r\n  color: #fff;\r\n  outline: 0;\r\n}\r\n\r\nbutton:disabled {\r\n  background: rgb(189, 189, 189);\r\n  cursor: default;\r\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -86,7 +119,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".video-wrapper {\r\n  height: 488px;\r\n}\r\n\r\n#videoFilter-title {\r\n  background-color: #f1f8ff;\r\n  width:667px;\r\n  border: 1px solid #c8e1ff;\r\n  padding: 8px 16px;\r\n  font-weight: 700;\r\n  font-size: 14px;\r\n}\r\n\r\n#videoFilter-box {\r\n  background-color: #eeeeee;\r\n  width: 700px;\r\n  height: 420px;\r\n  border: 1px solid #d1d5da;\r\n  border-top: none;\r\n}\r\n\r\n.filteredVideo {\r\n  width: 450px;\r\n  height: 270px;\r\n  position: -webkit-sticky;\r\n  position: sticky;\r\n  left: 55px;\r\n  border: 1px solid #d1d5da;\r\n}\r\n\r\n.filteredVideo-order {\r\n  display: inline-block;\r\n  position: relative;\r\n  left: 9px;\r\n  bottom: 135px;\r\n  font-size: 25px;\r\n  width: 30px;\r\n  text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, ".video-wrapper {\r\n  height: 488px;\r\n  position: relative;\r\n  left: 743px;\r\n}\r\n\r\n#videoFilter-title {\r\n  background-color: #f1f8ff;\r\n  width:667px;\r\n  border: 1px solid #c8e1ff;\r\n  padding: 8px 16px;\r\n  font-weight: 700;\r\n  font-size: 14px;\r\n}\r\n\r\n#videoFilter-box {\r\n  background-color: #eeeeee;\r\n  width: 700px;\r\n  height: 420px;\r\n  border: 1px solid #d1d5da;\r\n  border-top: none;\r\n}\r\n\r\n.filteredVideo {\r\n  width: 450px;\r\n  height: 270px;\r\n  position: -webkit-sticky;\r\n  position: sticky;\r\n  left: 55px;\r\n  border: 1px solid #d1d5da;\r\n}\r\n\r\n.filteredVideo-order {\r\n  display: inline-block;\r\n  position: relative;\r\n  left: 9px;\r\n  bottom: 135px;\r\n  font-size: 25px;\r\n  width: 30px;\r\n  text-align: center;\r\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -346,6 +379,196 @@ module.exports = __webpack_require__.p + "static/media/NanumSquareOTFRegular.94c
 
 /***/ }),
 
+/***/ "./src/component/dropzone/Dropzone.css":
+/*!*********************************************!*\
+  !*** ./src/component/dropzone/Dropzone.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./Dropzone.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/component/dropzone/Dropzone.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./Dropzone.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/component/dropzone/Dropzone.css", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./Dropzone.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/component/dropzone/Dropzone.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/component/dropzone/Dropzone.js":
+/*!********************************************!*\
+  !*** ./src/component/dropzone/Dropzone.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Dropzone_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dropzone.css */ "./src/component/dropzone/Dropzone.css");
+/* harmony import */ var _Dropzone_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Dropzone_css__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\jinip\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uCEA1\uC2A4\uD1A4\uB514\uC790\uC778\\YouHi_web\\src\\component\\dropzone\\Dropzone.js";
+
+
+
+class Dropzone extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hightlight: false
+    };
+    this.fileInputRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    this.openFileDialog = this.openFileDialog.bind(this);
+    this.onFilesAdded = this.onFilesAdded.bind(this);
+    this.onDragOver = this.onDragOver.bind(this);
+    this.onDragLeave = this.onDragLeave.bind(this);
+    this.onDrop = this.onDrop.bind(this);
+  }
+
+  openFileDialog() {
+    if (this.props.disabled) return;
+    this.fileInputRef.current.click();
+  }
+
+  onFilesAdded(evt) {
+    if (this.props.disabled) return;
+    const files = evt.target.files;
+
+    if (this.props.onFilesAdded) {
+      const array = this.fileListToArray(files);
+      this.props.onFilesAdded(array);
+    }
+  }
+
+  onDragOver(event) {
+    event.preventDefault();
+    if (this.props.disabed) return;
+    this.setState({
+      hightlight: true
+    });
+  }
+
+  onDragLeave(event) {
+    this.setState({
+      hightlight: false
+    });
+  }
+
+  onDrop(event) {
+    event.preventDefault();
+    if (this.props.disabed) return;
+    const files = event.dataTransfer.files;
+
+    if (this.props.onFilesAdded) {
+      const array = this.fileListToArray(files);
+      this.props.onFilesAdded(array);
+    }
+
+    this.setState({
+      hightlight: false
+    });
+  }
+
+  fileListToArray(list) {
+    const array = [];
+
+    for (var i = 0; i < list.length; i++) {
+      array.push(list.item(i));
+    }
+
+    return array;
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: `Dropzone ${this.state.hightlight ? "Highlight" : ""}`,
+      onDragOver: this.onDragOver,
+      onDragLeave: this.onDragLeave,
+      onDrop: this.onDrop,
+      onClick: this.openFileDialog,
+      style: {
+        cursor: this.props.disabled ? "default" : "pointer"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      ref: this.fileInputRef,
+      className: "FileInput",
+      type: "file",
+      multiple: true,
+      onChange: this.onFilesAdded,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      alt: "upload",
+      className: "Icon",
+      src: "baseline-cloud_upload-24px.svg",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 77
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 82
+      },
+      __self: this
+    }, "Upload Files"));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Dropzone);
+
+/***/ }),
+
 /***/ "./src/component/navbar.css":
 /*!**********************************!*\
   !*** ./src/component/navbar.css ***!
@@ -446,6 +669,111 @@ const Navbar = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
+
+/***/ }),
+
+/***/ "./src/component/progress/Progress.css":
+/*!*********************************************!*\
+  !*** ./src/component/progress/Progress.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./Progress.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/component/progress/Progress.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(true) {
+	module.hot.accept(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./Progress.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/component/progress/Progress.css", function() {
+		var newContent = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../../../node_modules/postcss-loader/src??postcss!./Progress.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/component/progress/Progress.css");
+
+		if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./src/component/progress/Progress.js":
+/*!********************************************!*\
+  !*** ./src/component/progress/Progress.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Progress_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Progress.css */ "./src/component/progress/Progress.css");
+/* harmony import */ var _Progress_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Progress_css__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\Users\\jinip\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uCEA1\uC2A4\uD1A4\uB514\uC790\uC778\\YouHi_web\\src\\component\\progress\\Progress.js";
+
+
+
+class Progress extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "ProgressBar",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "Progress",
+      style: {
+        width: this.props.progress + "%"
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Progress);
 
 /***/ }),
 
@@ -616,67 +944,340 @@ if(true) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dropzone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dropzone */ "./node_modules/react-dropzone/dist/es/index.js");
+/* harmony import */ var _dropzone_Dropzone__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dropzone/Dropzone */ "./src/component/dropzone/Dropzone.js");
 /* harmony import */ var _upload_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./upload.css */ "./src/component/upload.css");
 /* harmony import */ var _upload_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_upload_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _progress_Progress__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./progress/Progress */ "./src/component/progress/Progress.js");
 var _jsxFileName = "C:\\Users\\jinip\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\\uCEA1\uC2A4\uD1A4\uB514\uC790\uC778\\YouHi_web\\src\\component\\upload.js";
+// import React, { useCallback } from "react";
+// import { useDropzone } from "react-dropzone";
+// import "./upload.css";
+// //"http://ec2-13-58-52-57.us-east-2.compute.amazonaws.com/upload.php"
+// // var holder = document.getElementById("holder");
+// // var progress = document.getElementById("uploadprogress");
+// // holder.ondragover = function() {
+// //   this.className = "hover";
+// //   return false;
+// // };
+// // holder.ondragend = function() {
+// //   this.className = "";
+// //   return false;
+// // };
+// // holder.ondrop = function(e) {
+// //   this.className = "";
+// //   e.preventDefault();
+// //   readfiles(e.dataTransfer.files);
+// // };
+// // function readfiles(files) {
+// //   // 파일 미리보기
+// //   previewfile(files[0]);
+// //   var formData = new FormData();
+// //   formData.append("upload", files[0]);
+// //   var xhr = new XMLHttpRequest();
+// //   xhr.open("POST", "./devnull.php");
+// //   xhr.onload = function() {
+// //     progress.value = 100;
+// //   };
+// //   xhr.upload.onprogress = function(event) {
+// //     if (event.lengthComputable) {
+// //       var complete = ((event.loaded / event.total) * 100) | 0;
+// //       progress.value = progress.innerHTML = complete;
+// //     }
+// //   };
+// //   xhr.send(formData);
+// // }
+// // function previewfile(file) {
+// //   var reader = new FileReader();
+// //   reader.onload = function(event) {
+// //     var image = new Image();
+// //     image.src = event.target.result;
+// //     image.width = 250; // a fake resize
+// //     holder.appendChild(image);
+// //   };
+// //   reader.readAsDataURL(file);
+// // }
+// function sendRequest(file) {
+//   return new Promise((resolve, reject) => {
+//    const req = new XMLHttpRequest();
+//    req.upload.addEventListener("progress", event => {
+//     if (event.lengthComputable) {
+//      const copy = { ...this.state.uploadProgress };
+//      copy[file.name] = {
+//       state: "pending",
+//       percentage: (event.loaded / event.total) * 100
+//      };
+//      this.setState({ uploadProgress: copy });
+//     }
+//    });
+//    req.upload.addEventListener("load", event => {
+//     const copy = { ...this.state.uploadProgress };
+//     copy[file.name] = { state: "done", percentage: 100 };
+//     this.setState({ uploadProgress: copy });
+//     resolve(req.response);
+//    });
+//    req.upload.addEventListener("error", event => {
+//     const copy = { ...this.state.uploadProgress };
+//     copy[file.name] = { state: "error", percentage: 0 };
+//     this.setState({ uploadProgress: copy });
+//     reject(req.response);
+//    });
+//    const formData = new FormData();
+//    formData.append("file", file, file.name);
+//    req.open("POST", "http://ec2-13-58-52-57.us-east-2.compute.amazonaws.com/upload.php");
+//    req.send(formData);
+//   });
+//  }
+// const Upload = () => {
+//   const onDrop = useCallback(acceptedFiles => {
+//     // Do something with the files
+//     //readfiles(acceptedFiles);
+//     sendRequest(acceptedFiles);
+//   }, []);
+//   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+//   return (
+//     <div className="box-wrapper">
+//       <div id="upload-title">영상 업로드</div>
+//       <div id="container" {...getRootProps()} className="upload-wrapper">
+//         <input {...getInputProps()} className="upload-box" />
+//         {isDragActive ? (
+//           <p>파일을 드래그 해주세요.</p>
+//         ) : (
+//           <div id="upload-box"></div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+// export default Upload;
 
 
 
 
-const Upload = () => {
-  const onDrop = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(acceptedFiles => {// Do something with the files
-  }, []);
-  const {
-    getRootProps,
-    getInputProps,
-    isDragActive
-  } = Object(react_dropzone__WEBPACK_IMPORTED_MODULE_1__["useDropzone"])({
-    onDrop
-  });
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "box-wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: undefined
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "upload-title",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }, "\uC601\uC0C1 \uC5C5\uB85C\uB4DC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", Object.assign({}, getRootProps(), {
-    className: "upload-wrapper",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", Object.assign({}, getInputProps(), {
-    className: "upload-box",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: undefined
-  })), isDragActive ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, "\uD30C\uC77C\uC744 \uB4DC\uB798\uADF8 \uD574\uC8FC\uC138\uC694.") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "upload-box",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  })));
-};
+
+class Upload extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      files: [],
+      uploading: false,
+      uploadProgress: {},
+      successfullUploaded: false
+    };
+    this.onFilesAdded = this.onFilesAdded.bind(this);
+    this.uploadFiles = this.uploadFiles.bind(this);
+    this.sendRequest = this.sendRequest.bind(this);
+    this.renderActions = this.renderActions.bind(this);
+  }
+
+  onFilesAdded(files) {
+    this.setState(prevState => ({
+      files: prevState.files.concat(files)
+    }));
+  }
+
+  async uploadFiles() {
+    this.setState({
+      uploadProgress: {},
+      uploading: true
+    });
+    const promises = [];
+    this.state.files.forEach(file => {
+      promises.push(this.sendRequest(file));
+    });
+
+    try {
+      await Promise.all(promises);
+      this.setState({
+        successfullUploaded: true,
+        uploading: false
+      });
+    } catch (e) {
+      // Not Production ready! Do some error handling here instead...
+      this.setState({
+        successfullUploaded: true,
+        uploading: false
+      });
+    }
+  }
+
+  sendRequest(file) {
+    return new Promise((resolve, reject) => {
+      const req = new XMLHttpRequest();
+      req.upload.addEventListener("progress", event => {
+        if (event.lengthComputable) {
+          const copy = { ...this.state.uploadProgress
+          };
+          copy[file.name] = {
+            state: "pending",
+            percentage: event.loaded / event.total * 100
+          };
+          this.setState({
+            uploadProgress: copy
+          });
+        }
+      });
+      req.upload.addEventListener("load", event => {
+        const copy = { ...this.state.uploadProgress
+        };
+        copy[file.name] = {
+          state: "done",
+          percentage: 100
+        };
+        this.setState({
+          uploadProgress: copy
+        });
+        resolve(req.response);
+      });
+      req.upload.addEventListener("error", event => {
+        const copy = { ...this.state.uploadProgress
+        };
+        copy[file.name] = {
+          state: "error",
+          percentage: 0
+        };
+        this.setState({
+          uploadProgress: copy
+        });
+        reject(req.response);
+      });
+      const formData = new FormData();
+      formData.append("upload", file, file.name);
+      req.open("POST", "http://ec2-13-58-52-57.us-east-2.compute.amazonaws.com/upload.php");
+      req.send(formData);
+    });
+  }
+
+  renderProgress(file) {
+    const uploadProgress = this.state.uploadProgress[file.name];
+
+    if (this.state.uploading || this.state.successfullUploaded) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "ProgressWrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 205
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_progress_Progress__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        progress: uploadProgress ? uploadProgress.percentage : 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 206
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "CheckIcon",
+        alt: "done",
+        src: "baseline-check_circle_outline-24px.svg",
+        style: {
+          opacity: uploadProgress && uploadProgress.state === "done" ? 0.5 : 0
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 207
+        },
+        __self: this
+      }));
+    }
+  }
+
+  renderActions() {
+    if (this.state.successfullUploaded) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: () => this.setState({
+          files: [],
+          successfullUploaded: false
+        }),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 224
+        },
+        __self: this
+      }, "Clear");
+    } else {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        disabled: this.state.files.length < 0 || this.state.uploading,
+        onClick: this.uploadFiles,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 234
+        },
+        __self: this
+      }, "Upload");
+    }
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "Upload",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 246
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "Title",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 247
+      },
+      __self: this
+    }, "Upload Files"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "Content",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 248
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 249
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dropzone_Dropzone__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      onFilesAdded: this.onFilesAdded,
+      disabled: this.state.uploading || this.state.successfullUploaded,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 250
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "Files",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 255
+      },
+      __self: this
+    }, this.state.files.map(file => {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        key: file.name,
+        className: "Row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 258
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "Filename",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 259
+        },
+        __self: this
+      }, file.name), this.renderProgress(file));
+    }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "Actions",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 266
+      },
+      __self: this
+    }, this.renderActions()));
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (Upload);
 
@@ -1073,17 +1674,6 @@ module.exports = __webpack_require__.p + "static/media/filtered_video4.f63ffeaf.
 
 /***/ }),
 
-/***/ "./src/img/upload2.png":
-/*!*****************************!*\
-  !*** ./src/img/upload2.png ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "static/media/upload2.41cc1b8a.png";
-
-/***/ }),
-
 /***/ "./src/index.css":
 /*!***********************!*\
   !*** ./src/index.css ***!
@@ -1293,5 +1883,5 @@ module.exports = __webpack_require__(/*! C:\Users\jinip\OneDrive\바탕 화면\�
 
 /***/ })
 
-},[[1,"runtime-main",0]]]);
+},[[1,"runtime-main",1]]]);
 //# sourceMappingURL=main.chunk.js.map

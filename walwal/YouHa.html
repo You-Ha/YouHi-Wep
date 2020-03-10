@@ -92,7 +92,33 @@ code {
 
 #main-logo {
   height: 65px;
-}   </style><style type="text/css">/* .filebox {
+}   </style><style type="text/css">.Dropzone {
+  height: 200px;
+  width: 200px;
+  background-color: #fff;
+  border: 2px dashed rgb(187, 186, 186);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.Highlight {
+  background-color: rgb(188, 185, 236);
+}
+
+.Icon {
+  opacity: 0.3;
+  height: 64px;
+  width: 64px;
+}
+
+.FileInput {
+  display: none;
+}
+</style><style type="text/css">/* /* .filebox {
     display: flex;
     justify-content: center;
     margin-top: 200px;
@@ -128,7 +154,7 @@ code {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
-  } */
+  } 
 
 .box-wrapper {
   height: 488px;
@@ -142,7 +168,7 @@ code {
 
 #upload-box {
     background-color: #eeeeee;
-    background-image: url(/static/media/upload2.41cc1b8a.png);
+    background-image: url("../img/upload2.png");
     background-repeat: no-repeat;
     background-position: 50%;
     width: 100%;
@@ -161,7 +187,115 @@ code {
   padding: 8px 16px;
   font-weight: 700;
   font-size: 14px;
-}</style><style type="text/css">.text-wrapper {
+} */
+
+.Upload {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  align-items: flex-start;
+  text-align: left;
+  overflow: hidden;
+}
+
+.Content {
+  display: flex;
+  flex-direction: row;
+  padding-top: 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.Files {
+  margin-left: 32px;
+  align-items: flex-start;
+  justify-items: flex-start;
+  flex: 1 1;
+  overflow-y: auto;
+}
+
+.Actions {
+  display: flex;
+  flex: 1 1;
+  width: 100%;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 32px;
+}
+
+.Title {
+  margin-bottom: 32px;
+  color: #555;
+}
+
+.Filename {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #555;
+}
+
+.Row {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50px;
+  padding: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.CheckIcon {
+  opacity: 0.5;
+  margin-left: 32px;
+}
+
+.ProgressWrapper {
+  display: flex;
+  flex: 1 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+button {
+  font-family: "Roboto medium", sans-serif;
+  font-size: 14px;
+  display: inline-block;
+  height: 36px;
+  min-width: 88px;
+  padding: 6px 16px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 0;
+  border-radius: 2px;
+  background: rgba(103, 58, 183, 1);
+  color: #fff;
+  outline: 0;
+}
+
+button:disabled {
+  background: rgb(189, 189, 189);
+  cursor: default;
+}</style><style type="text/css">.ProgressBar {
+  width: 100%;
+  height: 8px;
+  background-color: rgb(183, 155, 229);
+  border-radius: 5px;
+}
+
+.Progress {
+  background-color: rgba(103, 58, 183, 1);
+  height: 100%;
+  margin: 0;
+  border-radius: 5px;
+}
+</style><style type="text/css">.text-wrapper {
   margin-top: 120px;
   margin-right: 45px;
 }
@@ -188,6 +322,8 @@ code {
 
 </style><style type="text/css">.video-wrapper {
   height: 488px;
+  position: relative;
+  left: 743px;
 }
 
 #videoFilter-title {
@@ -254,10 +390,10 @@ code {
 }
 
 .Total {
-  display: flex;
+  /* display: flex;
   flex: 1 1 auto;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   margin-top: 50px;
 }
 
@@ -299,7 +435,7 @@ code {
 </style></head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"><div class="App"><div class="nav-wrapper"><img id="main-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAABQCAYAAADr/ADSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVaSURBVHhe7ZxZaCRVFIbTSWedTDrd2buTdLqnl3Q23GVc8UEFGVEERVAEUVFRH1xQRFFRBBH1RXxy31EQlxeZUfFJUBEE1wdFFEV03FBBRxk93r+GkhhO4q2+tZykzsNHHjpVfep8Xbfucm511ForpMhDxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFhJjF+eV1WW4u0cnVJp1aqdOuSqNt/OMPaSzSAvM9q8HnXJxxErmYg5qLdNKOJl00M0cXzFTo5skSPVIYpYcMDxTG6OWhHH3Y10/vr8NHhl86u+j3TCf91tk+/vGf9vbSe2u+YzUfGPD5M8MFLz7EiXgR94Um/vNnK3RcrUUHm+virjcsIhFzVL1FN5kL2b09R5/09tHPXV1EHR1bhu+zWU/wi7lhuqY4492FXB5cCFVMyzQBN0xN0+c9PewFbVVwl+FO4nLSLqGJQdv8tLn9ucDTwL5Mhq43P0ouN+0Qmpi7xifZgNME5FxtmjYuP0EJRcwZczXvAc0Fmza+6u6hI+sLbJ6C4Cymbng+l2eDTCt3jk+xuQqCs5gTavP0Y1eWDTCtoNuNZy6XL1ucxVw2Xaa/meDSDJr1E83YjcuXLc5i7hnTh/5a9ndkzGB0js2XLc5iMIjkgks7t00U2XzZ4iSm2VqmN7YNsoGlnWfNmI7LmS1OYnaabuE32W42sLTz2uAQmzNbnMXsVTEs7/YP0NL8Eps3G5zEYGCJGVsusCjYb0bW94+M0cd9feznkvgum6Wj6y02bzY4ibl0eo4NKirQLT/T/BiOaCx4U0A/CB4/oSXZmZSYixMQc265+u/3n1Jt0Au5PP215v8kgDvm2FpKxQBMCWHM8NbANvaYpMCPxWUpYNOL8VlpLtEtkyX6rKeXPTYJLjH54WK1YcuI8TnGNB8PFsboJwGrpsgPF6MNTmLuHZ1gA4oKGzE+p1Xqic9KJCbmsfwIG1BUBBEDGoarirNecQV3vqhJTMyjhVE2oKgIKsYHlTqYbP26O97BsIqx5PjavDeHhVIm7vxho2ICct5sld4ciH7yVcUEBGvyT8bwfFQxlqDu7driDH0RU92birEAx70+OMSeNypUzAZg7f0J02z9mcmw54wSFcNwWGOR7hif8uqMuXPFQWJiJA4wm+Y5ckWp7BWzc+eIk8TExF0W+39isAcG0zBSlgESE4M9L1xAUbGeGGz7eNg0q78KK9NN7ewy1tRRJvRlt7xtH/iR7Ko2/pOvIDiJwS+CCyoqIObs8g7vu88xgt7pl7U4tppvvaXl9ovLncRghS7O9hwVjjdOTdNzuXxs813tsjfJYgzsRYy1O2rGIvs6ZQvxwa46dNm5vNngJAZVIFpXxoNZBi5ntjiJwdzT28KKIKSwZ3uCYsCrJgAusLSDhTkuX7Y4i7lvdJwNLM2g93id40ZZZzFXlma9QLgA08ofppNyeqXO5ssWZzF464W0EXfSoLbNpUcGnMWgAxDHMu1m4qn8CJurIDiLAZeXyiLrh5MA+y+xC4LLUxBCEYOdZSju5gJNG3c79sZ8QhEDDjVtatxLt9J4xQwdUEPN5ScooYkBkLMZ5rHCBm+Xwp2Cd6txeWmHUMX4nGXaWLwyCvNFeL8KdzGbHeykQ+8L9QRhPFPWEokYn8MbC15xNwZbt08U6aWhYW+mAKuM2O2MjbWYHpcK4kOciBebXR83Em4114GXTuBtga5d4o2IVMxGoMOA9QpMhB74K40DcSFOLv6oSUyMsjEqRigqRigqRigqRigqRigqRigqRigqRigqRigqRigqRigqRiQr9A/+OozS/zCjXAAAAABJRU5ErkJggg==" alt=""><div id="project-name">YouHa</div></div><div class="Total"><div class="box-wrapper"><div id="upload-title">영상 업로드</div><div tabindex="0" class="upload-wrapper"><input multiple="" type="file" autocomplete="off" tabindex="-1" class="upload-box" style="display: none;"><div id="upload-box"></div></div></div><div class="video-wrapper"><div id="videoFilter-title">영상 필터</div><div id="videoFilter-box"><div style="position: relative; overflow: hidden; width: 100%; height: 420px;"><div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;"><div><div class="filteredVideo-order">1</div><img class="filteredVideo" src="./YouHa_files/filtered_video1.7aa86f10.PNG" alt=""></div><div><div class="filteredVideo-order">2</div><img class="filteredVideo" src="./YouHa_files/filtered_video2.4e2dfec7.PNG" alt=""></div><div><div class="filteredVideo-order">3</div><img class="filteredVideo" src="./YouHa_files/filtered_video3.19320e95.PNG" alt=""></div><div><div class="filteredVideo-order">4</div><img class="filteredVideo" src="./YouHa_files/filtered_video4.f63ffeaf.PNG" alt=""></div></div><div class="track-horizontal" style="display: none;"><div style="position: relative; display: block; height: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); width: 0px;"></div></div><div style="position: absolute; width: 6px; right: 2px; bottom: 2px; top: 2px; border-radius: 3px;"><div style="position: relative; display: block; width: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); height: 158px; transform: translateY(0px);"></div></div></div></div></div><div class="text-wrapper"><div id="text-title">주의사항</div><div id="text-box"></div></div><div class="voice-wrapper"><div id="voiceFilter-title">음성 필터</div><div id="voice-filter"><div style="position: relative; overflow: hidden; width: 100%; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;"></div><div class="track-horizontal" style="display: none;"><div style="position: relative; display: block; height: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); width: 0px;"></div></div><div style="position: absolute; width: 6px; right: 2px; bottom: 2px; top: 2px; border-radius: 3px;"><div style="position: relative; display: block; width: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); height: 0px;"></div></div></div></div></div></div></div></div>
+    <div id="root"><div class="App"><div class="nav-wrapper"><img id="main-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAABQCAYAAADr/ADSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVaSURBVHhe7ZxZaCRVFIbTSWedTDrd2buTdLqnl3Q23GVc8UEFGVEERVAEUVFRH1xQRFFRBBH1RXxy31EQlxeZUfFJUBEE1wdFFEV03FBBRxk93r+GkhhO4q2+tZykzsNHHjpVfep8Xbfucm511ForpMhDxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFxQhFhJjF+eV1WW4u0cnVJp1aqdOuSqNt/OMPaSzSAvM9q8HnXJxxErmYg5qLdNKOJl00M0cXzFTo5skSPVIYpYcMDxTG6OWhHH3Y10/vr8NHhl86u+j3TCf91tk+/vGf9vbSe2u+YzUfGPD5M8MFLz7EiXgR94Um/vNnK3RcrUUHm+virjcsIhFzVL1FN5kL2b09R5/09tHPXV1EHR1bhu+zWU/wi7lhuqY4492FXB5cCFVMyzQBN0xN0+c9PewFbVVwl+FO4nLSLqGJQdv8tLn9ucDTwL5Mhq43P0ouN+0Qmpi7xifZgNME5FxtmjYuP0EJRcwZczXvAc0Fmza+6u6hI+sLbJ6C4Cymbng+l2eDTCt3jk+xuQqCs5gTavP0Y1eWDTCtoNuNZy6XL1ucxVw2Xaa/meDSDJr1E83YjcuXLc5i7hnTh/5a9ndkzGB0js2XLc5iMIjkgks7t00U2XzZ4iSm2VqmN7YNsoGlnWfNmI7LmS1OYnaabuE32W42sLTz2uAQmzNbnMXsVTEs7/YP0NL8Eps3G5zEYGCJGVsusCjYb0bW94+M0cd9feznkvgum6Wj6y02bzY4ibl0eo4NKirQLT/T/BiOaCx4U0A/CB4/oSXZmZSYixMQc265+u/3n1Jt0Au5PP215v8kgDvm2FpKxQBMCWHM8NbANvaYpMCPxWUpYNOL8VlpLtEtkyX6rKeXPTYJLjH54WK1YcuI8TnGNB8PFsboJwGrpsgPF6MNTmLuHZ1gA4oKGzE+p1Xqic9KJCbmsfwIG1BUBBEDGoarirNecQV3vqhJTMyjhVE2oKgIKsYHlTqYbP26O97BsIqx5PjavDeHhVIm7vxho2ICct5sld4ciH7yVcUEBGvyT8bwfFQxlqDu7driDH0RU92birEAx70+OMSeNypUzAZg7f0J02z9mcmw54wSFcNwWGOR7hif8uqMuXPFQWJiJA4wm+Y5ckWp7BWzc+eIk8TExF0W+39isAcG0zBSlgESE4M9L1xAUbGeGGz7eNg0q78KK9NN7ewy1tRRJvRlt7xtH/iR7Ko2/pOvIDiJwS+CCyoqIObs8g7vu88xgt7pl7U4tppvvaXl9ovLncRghS7O9hwVjjdOTdNzuXxs813tsjfJYgzsRYy1O2rGIvs6ZQvxwa46dNm5vNngJAZVIFpXxoNZBi5ntjiJwdzT28KKIKSwZ3uCYsCrJgAusLSDhTkuX7Y4i7lvdJwNLM2g93id40ZZZzFXlma9QLgA08ofppNyeqXO5ssWZzF464W0EXfSoLbNpUcGnMWgAxDHMu1m4qn8CJurIDiLAZeXyiLrh5MA+y+xC4LLUxBCEYOdZSju5gJNG3c79sZ8QhEDDjVtatxLt9J4xQwdUEPN5ScooYkBkLMZ5rHCBm+Xwp2Cd6txeWmHUMX4nGXaWLwyCvNFeL8KdzGbHeykQ+8L9QRhPFPWEokYn8MbC15xNwZbt08U6aWhYW+mAKuM2O2MjbWYHpcK4kOciBebXR83Em4114GXTuBtga5d4o2IVMxGoMOA9QpMhB74K40DcSFOLv6oSUyMsjEqRigqRigqRigqRigqRigqRigqRigqRigqRigqRigqRigqRiQr9A/+OozS/zCjXAAAAABJRU5ErkJggg==" alt=""><div id="project-name">YouHa</div></div><div class="Total"><div class="Upload"><span class="Title">Upload Files</span><div class="Content"><div><div class="Dropzone " style="cursor: pointer;"><input class="FileInput" type="file" multiple=""><img alt="upload" class="Icon" src="./YouHa_files/baseline-cloud_upload-24px.svg"><span>Upload Files</span></div></div><div class="Files"></div></div><div class="Actions"><button>Upload</button></div></div><div class="video-wrapper"><div id="videoFilter-title">영상 필터</div><div id="videoFilter-box"><div style="position: relative; overflow: hidden; width: 100%; height: 420px;"><div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;"><div><div class="filteredVideo-order">1</div><img class="filteredVideo" src="./YouHa_files/filtered_video1.7aa86f10.PNG" alt=""></div><div><div class="filteredVideo-order">2</div><img class="filteredVideo" src="./YouHa_files/filtered_video2.4e2dfec7.PNG" alt=""></div><div><div class="filteredVideo-order">3</div><img class="filteredVideo" src="./YouHa_files/filtered_video3.19320e95.PNG" alt=""></div><div><div class="filteredVideo-order">4</div><img class="filteredVideo" src="./YouHa_files/filtered_video4.f63ffeaf.PNG" alt=""></div></div><div class="track-horizontal" style="display: none;"><div style="position: relative; display: block; height: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); width: 0px;"></div></div><div style="position: absolute; width: 6px; right: 2px; bottom: 2px; top: 2px; border-radius: 3px;"><div style="position: relative; display: block; width: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); height: 158px; transform: translateY(0px);"></div></div></div></div></div><div class="text-wrapper"><div id="text-title">주의사항</div><div id="text-box"></div></div><div class="voice-wrapper"><div id="voiceFilter-title">음성 필터</div><div id="voice-filter"><div style="position: relative; overflow: hidden; width: 100%; height: 356px;"><div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;"></div><div class="track-horizontal" style="display: none;"><div style="position: relative; display: block; height: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); width: 0px;"></div></div><div style="position: absolute; width: 6px; right: 2px; bottom: 2px; top: 2px; border-radius: 3px;"><div style="position: relative; display: block; width: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); height: 0px;"></div></div></div></div></div></div></div></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -310,6 +446,6 @@ code {
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script src="./YouHa_files/bundle.js.다운로드"></script><script src="./YouHa_files/0.chunk.js.다운로드"></script><script src="./YouHa_files/main.chunk.js.다운로드"></script>
+  <script src="./YouHa_files/bundle.js.다운로드"></script><script src="./YouHa_files/1.chunk.js.다운로드"></script><script src="./YouHa_files/main.chunk.js.다운로드"></script>
 
 </body></html>
