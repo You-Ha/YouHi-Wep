@@ -4,9 +4,9 @@ import "./text.css";
 
 const Text = () => {
   return (
-    <div>
+    <div className="text-wrapper">
       <div id="text-title">주의사항</div>
-      <div className="text-wrapper"></div>
+      <div id="text-box"></div>
     </div>
   );
 };

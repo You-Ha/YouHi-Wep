@@ -16,7 +16,7 @@ const Upload = () => {
         {isDragActive ? (
           <p>파일을 드래그 해주세요.</p>
         ) : (
-          <div className="upload-box"></div>
+          <div id="upload-box"></div>
         )}
       </div>
     </div>

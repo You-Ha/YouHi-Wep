@@ -4,11 +4,11 @@ import "./video.css";
 
 const Video = () => {
   return (
-    <div>
+    <div className="video-wrapper">
       <div id="videoFilter-title">영상 필터</div>
-      <div className="video-filter">
+      <div id="videoFilter-box">
         <Scrollbars
-          style={{ height: 450 }}
+          style={{ height: 420 }}
           renderTrackHorizontal={props => (
             <div
               {...props}
@@ -21,16 +21,15 @@ const Video = () => {
             <div className="filteredVideo-order">1</div>
             <img
               className="filteredVideo"
-              src={require("../img/upload.png")}
+              src={require("../img/filtered_video1.PNG")}
               alt=""
             />
-            <span>안녕?</span>
           </div>
           <div>
             <div className="filteredVideo-order">2</div>
             <img
               className="filteredVideo"
-              src={require("../img/upload.png")}
+              src={require("../img/filtered_video2.PNG")}
               alt=""
             />
           </div>
@@ -38,7 +37,7 @@ const Video = () => {
             <div className="filteredVideo-order">3</div>
             <img
               className="filteredVideo"
-              src={require("../img/upload.png")}
+              src={require("../img/filtered_video3.PNG")}
               alt=""
             />
           </div>
@@ -46,55 +45,7 @@ const Video = () => {
             <div className="filteredVideo-order">4</div>
             <img
               className="filteredVideo"
-              src={require("../img/upload.png")}
-              alt=""
-            />
-          </div>
-          <div>
-            <div className="filteredVideo-order">5</div>
-            <img
-              className="filteredVideo"
-              src={require("../img/upload.png")}
-              alt=""
-            />
-          </div>
-          <div>
-            <div className="filteredVideo-order">6</div>
-            <img
-              className="filteredVideo"
-              src={require("../img/upload.png")}
-              alt=""
-            />
-          </div>
-          <div>
-            <div className="filteredVideo-order">7</div>
-            <img
-              className="filteredVideo"
-              src={require("../img/upload.png")}
-              alt=""
-            />
-          </div>
-          <div>
-            <div className="filteredVideo-order">8</div>
-            <img
-              className="filteredVideo"
-              src={require("../img/upload.png")}
-              alt=""
-            />
-          </div>
-          <div>
-            <div className="filteredVideo-order">9</div>
-            <img
-              className="filteredVideo"
-              src={require("../img/upload.png")}
-              alt=""
-            />
-          </div>
-          <div>
-            <div className="filteredVideo-order">10</div>
-            <img
-              className="filteredVideo"
-              src={require("../img/upload.png")}
+              src={require("../img/filtered_video4.PNG")}
               alt=""
             />
           </div>

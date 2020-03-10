@@ -1,24 +1,8 @@
-.nav-wrapper {
-    display: flex;
-    background-color: lightgray;
-    border-bottom: 1px black;
-}
-
 /*
 .nav-logo {
     width: 200px;
     height: 50px;
     margin-left: 150px;
-}
-*/
-
-.project-name {
-  text-align: center;
-  padding: 6px;
-  font-size: 40px;
-  font-weight: 900;
-  color: white;
-  background-color: #24292e;
 }
 
 .nav-search {
@@ -40,11 +24,21 @@
     font-size: 20px;
     margin-top: 14px;
     margin-left: 300px;
+} */
+
+.nav-wrapper {
+  display: flex;
+  justify-content: left;
+  background-color: #24292e;
+}
+
+#project-name {
+  padding: 12px;
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
 }
 
 #main-logo {
-  position: relative;
-  left: 910px;
-  bottom: 65px;
   height: 65px;
-}
+}   

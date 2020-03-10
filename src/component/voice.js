@@ -4,9 +4,9 @@ import "./voice.css";
 
 const Voice = () => {
   return (
-    <div>
+    <div className="voice-wrapper">
       <div id="voiceFilter-title">음성 필터</div>
-      <div className="voice-filter">
+      <div id="voice-filter">
         <Scrollbars
           style={{ height: 356 }}
           renderTrackHorizontal={props => (

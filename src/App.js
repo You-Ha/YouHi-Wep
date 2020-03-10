@@ -4,10 +4,11 @@ import Upload from "./component/upload";
 import Text from "./component/text";
 import Video from "./component/video";
 import Voice from "./component/voice";
+import "./App.css";
 
 function App() {
-//   fetch ("https://naveropenapi.apigw.ntruss.com/recog/v1/stt?lang=${language}")
-//   .then ()
+  //   fetch ("https://naveropenapi.apigw.ntruss.com/recog/v1/stt?lang=${language}")
+  //   .then ()
 
   // const fs = require("fs");
   // const request = require("request");
@@ -15,7 +16,7 @@ function App() {
   // const clientId = "kzs32rf8eb";
   // const clientSecret = "jPe08G68kklqMOHBzjEl1QUMCh6eoTooUWNs5DZH";
   // sibal
-  // // language => ?�어 코드 ( Kor, Jpn, Eng, Chn )
+  // // language => ?�어 코드 ( Kor, Jpn, Eng, Chn )
   // function stt(language, filePath) {
   //   const url = `https://naveropenapi.apigw.ntruss.com/recog/v1/stt?lang=${language}`;
   //   const requestConfig = {
@@ -43,15 +44,16 @@ function App() {
   // stt("Kor", "./theaudio.wav");
 
   return (
-    <div>
-      <Navbar/>
-      <Upload/>
-      <Text/>
-      <Video/>
-      <Voice/>
+    <div className="App">
+      <Navbar />
+      <div className="Total">
+          <Upload />
+          <Video />
+          <Text />
+          <Voice />
+      </div>
     </div>
-  )
-
+  );
 }
 
 export default App;
