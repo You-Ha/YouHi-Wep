@@ -3,10 +3,10 @@
 }
 
 .Total {
-  /* display: flex;
-  flex: 1 1 auto;
+  display: inline-flex;
+  /* flex: 1 1 auto;*/
   justify-content: center;
-  flex-wrap: wrap; */
+  flex-wrap: wrap;
   margin-top: 50px;
 }
 
