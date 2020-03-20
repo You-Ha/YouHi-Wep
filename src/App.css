@@ -1,13 +1,94 @@
-.App {
-  margin-bottom: 150px;
+@font-face {  font-family: 'Roboto';  font-style: normal;  font-weight: 100;
+  src: url(./Font/Roboto-Thin.woff2) format('woff2'),
+       url(./Font/Roboto-Thin.woff) format('woff'),
+       url(./Font/Roboto-Thin.otf) format('opentype');}
+@font-face {  font-family: 'Roboto';  font-style: normal;  font-weight: 300;
+  src: url(./Font/Roboto-Light.woff2) format('woff2'),
+       url(./Font/Roboto-Light.woff) format('woff'),
+       url(./Font/Roboto-Light.otf) format('opentype');}
+@font-face {   font-family: 'Roboto';   font-style: normal;   font-weight: 400;
+   src: url(./Font/Roboto-Regular.woff2) format('woff2'),
+        url(./Font/Roboto-Regular.woff) format('woff'),
+        url(./Font/Roboto-Regular.otf) format('opentype'); }
+@font-face {   font-family: 'Roboto';   font-style: normal;   font-weight: 500;
+   src: url(./Font/Roboto-Medium.woff2) format('woff2'),
+        url(./Font/Roboto-Medium.woff) format('woff'),
+        url(./Font/Roboto-Medium.otf) format('opentype'); }
+@font-face {   font-family: 'Roboto';   font-style: normal;   font-weight: 700;
+   src: url(./Font/Roboto-Bold.woff2) format('woff2'),
+        url(./Font/Roboto-Bold.woff) format('woff'),
+        url(./Font/Roboto-Bold.otf) format('opentype'); }
+
+/* .App {
+  
+} */
+
+body {
+  height: 1500px;
+  background-color: #fff;
+  font-family: 'Roboto';
+}
+
+.first-container {
+  display: flex;
+  color: #fff;
+  height: 520px;
+  background-image: url(./img/background_img.png);
+  background-repeat: no-repeat;
+  background-size: 1919px 820px;
+  background-attachment: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-container-flex-items-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 505px;
+  height: inherit;
+  padding-bottom: 55px;
+  padding-left: 400px;
+}
+
+.text-header {
+  width: 505px;
+  height: 128px;
+  font-size: 130px;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.text-descrip {
+  font-size: 17px;
+  line-height: 35px;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+.upload-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 1903px;
 }
 
 .Total {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   /* flex: 1 1 auto;*/
-  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  margin-top: 50px;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /*
