@@ -10,7 +10,7 @@ const Navbar = () => {
         <input type="text" className="nav-search" placeholder="YouHa" />
       </div> */}
       <img id="main-logo" src={require("../img/YouHa_logo.png")} alt="" />
-      <div id="project-name">YouHa</div>
+      <div id="project-name">YouHi</div>
     </div>
   );
 };

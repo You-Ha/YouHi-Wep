@@ -58,7 +58,7 @@
 // function sendRequest(file) {
 //   return new Promise((resolve, reject) => {
 //    const req = new XMLHttpRequest();
- 
+
 //    req.upload.addEventListener("progress", event => {
 //     if (event.lengthComputable) {
 //      const copy = { ...this.state.uploadProgress };
@@ -69,24 +69,24 @@
 //      this.setState({ uploadProgress: copy });
 //     }
 //    });
-    
+
 //    req.upload.addEventListener("load", event => {
 //     const copy = { ...this.state.uploadProgress };
 //     copy[file.name] = { state: "done", percentage: 100 };
 //     this.setState({ uploadProgress: copy });
 //     resolve(req.response);
 //    });
-    
+
 //    req.upload.addEventListener("error", event => {
 //     const copy = { ...this.state.uploadProgress };
 //     copy[file.name] = { state: "error", percentage: 0 };
 //     this.setState({ uploadProgress: copy });
 //     reject(req.response);
 //    });
- 
+
 //    const formData = new FormData();
 //    formData.append("file", file, file.name);
- 
+
 //    req.open("POST", "http://ec2-13-58-52-57.us-east-2.compute.amazonaws.com/upload.php");
 //    req.send(formData);
 //   });
@@ -117,11 +117,11 @@
 
 // export default Upload;
 
-
 import React, { Component } from "react";
 import Dropzone from "./dropzone/Dropzone";
 import "./upload.css";
 import Progress from "./progress/Progress";
+import Text from "../component/text";
 
 class Upload extends Component {
   constructor(props) {
@@ -136,7 +136,8 @@ class Upload extends Component {
     this.onFilesAdded = this.onFilesAdded.bind(this);
     this.uploadFiles = this.uploadFiles.bind(this);
     this.sendRequest = this.sendRequest.bind(this);
-    this.renderActions = this.renderActions.bind(this);
+    this.renderUploadActions = this.renderActions.bind(this);
+  //   this.uploadFileToS3 = this.uploadFileToS3.bind(this);
   }
 
   onFilesAdded(files) {
@@ -160,6 +161,63 @@ class Upload extends Component {
       this.setState({ successfullUploaded: true, uploading: false });
     }
   }
+
+  // uploadFileToS3(file) {
+  //   const AWS = require("aws-sdk");
+  //   const BUCKET_NAME = "youhi";
+  //   const s3 = new AWS.S3({
+  //     accessKeyId: "AKIA2GA2ZTVSBJG3QYX2",
+  //     secretAccessKey: "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",
+  //     region: "ap-northeast-2"
+  //   });
+  //   const params = {
+  //     Bucket: BUCKET_NAME,
+  //     ContentType: file.type,
+  //     Key: file.name,
+  //     Body: file,
+  //     ACL: "public-read"
+  //   };
+  //   copy = this.state.uploadProgress;
+  //   return new Promise((resolve, reject) => {
+  //     s3.upload(params, function(err, data) {
+  //       if (err) {
+  //         throw err;
+  //       }
+  //       console.log("1");
+  //       console.log(`File uploaded successfully.`);
+  //     }).on("httpUploadProgress", function(event) {
+  //       console.log(
+  //         "Uploaded :: " + parseInt((event.loaded * 100) / event.total) + "%"
+  //       );
+
+  //       console.log(event.loaded);
+  //       console.log(event.total);
+  //       if (event.loaded === event.total) {
+  //         const copy = { ...this.state.uploadProgress };
+  //         // const copy = Object.assign({}, this.state.uploadProgress);
+  //         // const copy = JSON.parse(JSON.stringify(this.state.uploadProgress));
+  //         copy[file.name] = {
+  //           state: "done",
+  //           percentage: 100
+  //         };
+  //         this.setState({ uploadProgress: copy });
+  //         console.log("complete");
+  //         resolve();
+  //       } else if (event.loaded < event.total) {
+  //         const copy = { ...this.state.uploadProgress };
+  //         // const copy = Object.assign({}, this.state.uploadProgress);
+  //         // const copy = JSON.parse(JSON.stringify(this.state.uploadProgress));
+  //         copy[file.name] = {
+  //           state: "pending",
+  //           percentage: (event.loaded / event.total) * 100
+  //         };
+  //         this.setState({ uploadProgress: copy });
+  //         console.log("progress");
+  //       }
+  //       console.log(1);
+  //     });
+  //   });
+  // }
 
   sendRequest(file) {
     return new Promise((resolve, reject) => {
@@ -190,11 +248,39 @@ class Upload extends Component {
         reject(req.response);
       });
 
-      const formData = new FormData();
-      formData.append("upload", file, file.name);
+      // const formData = new FormData();
+      // formData.append("file", file, file.name);
 
-      req.open("POST", "http://ec2-13-58-52-57.us-east-2.compute.amazonaws.com/upload.php");
-      req.send(formData);
+      // req.open(
+      //   "POST",
+      //   "https://0pwsx3hkw2.execute-api.ap-northeast-2.amazonaws.com/prod/fileupload"
+      // );
+      // req.send(formData);
+
+      // **socket connection**
+      // const io = require("socket.io-client"),
+      //   ioClient = io.connect("http://3.17.20.240:1234");
+      // ioClient.emit("msg", "x");
+
+      // **aws s3 upload**
+      // this.uploadFile(file);
+
+      var data = new FormData();
+      data.append("file", file, file.name);
+
+      req.addEventListener("readystatechange", function() {
+        if (this.readyState === 4) {
+          console.log(this.response.data);
+        }
+      });
+
+      req.open(
+        "POST",
+        "https://mt8btt2a0k.execute-api.ap-northeast-2.amazonaws.com/prod/"
+      );
+      // req.setRequestHeader("Content-Type", "multipart/form-data");
+
+      req.send(data);
     });
   }
 
@@ -221,37 +307,43 @@ class Upload extends Component {
   renderActions() {
     if (this.state.successfullUploaded) {
       return (
-        <button
-          onClick={() =>
-            this.setState({ files: [], successfullUploaded: false })
-          }
-        >
-          Clear
-        </button>
+        <div className="Actions">
+          <button
+            className="upload-button"
+            onClick={() =>
+              this.setState({ files: [], successfullUploaded: false })
+            }
+          >
+            Clear
+          </button>
+          <button className="filter-button">필터</button>
+        </div>
       );
     } else {
       return (
-        <button
-          disabled={this.state.files.length < 0 || this.state.uploading}
-          onClick={this.uploadFiles}
-        >
-          Upload
-        </button>
+        <div className="Actions">
+          <button
+            className="upload-button"
+            disabled={this.state.files.length < 0 || this.state.uploading}
+            onClick={this.uploadFiles}
+          >
+            업로드
+          </button>
+          <button className="filter-button">필터</button>
+        </div>
       );
     }
   }
 
   render() {
     return (
-      <div className="Upload">
-        <span className="Title">Upload Files</span>
-        <div className="Content">
-          <div>
-            <Dropzone
-              onFilesAdded={this.onFilesAdded}
-              disabled={this.state.uploading || this.state.successfullUploaded}
-            />
-          </div>
+      <div className="Content">
+        <Dropzone
+          onFilesAdded={this.onFilesAdded}
+          disabled={this.state.uploading || this.state.successfullUploaded}
+        />
+        <div className="text-buttons">
+          <Text />
           <div className="Files">
             {this.state.files.map(file => {
               return (
@@ -262,8 +354,8 @@ class Upload extends Component {
               );
             })}
           </div>
+          {this.renderActions()}
         </div>
-        <div className="Actions">{this.renderActions()}</div>
       </div>
     );
   }

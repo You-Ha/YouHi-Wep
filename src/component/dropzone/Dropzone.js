@@ -77,9 +77,13 @@ class Dropzone extends Component {
         <img
           alt="upload"
           className="Icon"
-          src="baseline-cloud_upload-24px.png"
+          src="baseline-cloud_upload-24px.svg"
         />
-        <span>Upload Files</span>
+        <span>
+          동영상을 '여기' 끌어다 놓거나
+          <br />
+          '여기'를 클릭하세요.
+        </span>
       </div>
     );
   }

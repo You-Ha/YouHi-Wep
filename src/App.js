@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./component/navbar";
+import Test from "./test/test";
 import Upload from "./component/upload";
-import Text from "./component/text";
 import Video from "./component/video";
 import Voice from "./component/voice";
 import "./App.css";
@@ -9,7 +9,6 @@ import "./App.css";
 function App() {
   //   fetch ("https://naveropenapi.apigw.ntruss.com/recog/v1/stt?lang=${language}")
   //   .then ()
-
   // const fs = require("fs");
   // const request = require("request");
 
@@ -46,11 +45,25 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+
+      <div className="first-container">
+        <div className="first-container-flex-items-text">
+          <div className="text-header">YouHi</div>
+          <div className="text-descrip">
+            Video upload filtering application <br />
+            designed to provide safe video for minors.
+          </div>
+        </div>
+      </div>
       <div className="Total">
-          <Upload />
-          <Video />
-          <Text />
-          <Voice />
+        <Test />
+        <Upload />
+        <div className="filter-box">
+          {
+            <Video />
+            /*  <Voice /> */
+          }
+        </div>
       </div>
     </div>
   );
