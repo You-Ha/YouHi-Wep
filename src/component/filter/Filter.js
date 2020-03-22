@@ -7,14 +7,16 @@ const Filter = () => {
   return (
     <div className="Filter-wrapper">
       <FilterElement />
-      <img
-        alt="video-filter-box"
-        src={require("../../img/Video_filter_box.png")}
-      />
-      <img
-        alt="voice-filter-box"
-        src={require("../../img/Voice_filter_box.png")}
-      />
+      <div>
+        <img
+          alt="video-filter-box"
+          src={require("../../img/Video_filter_box.png")}
+        />
+        <img
+          alt="voice-filter-box"
+          src={require("../../img/Voice_filter_box.png")}
+        />
+      </div>
       {/* <Video />
       <Voice /> */}
     </div>
