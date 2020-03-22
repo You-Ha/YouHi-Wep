@@ -7,7 +7,7 @@ const Filter = () => {
   return (
     <div className="Filter-wrapper">
       <FilterElement />
-      <div>
+      <div className="Filter-filter-box">
         <img
           alt="video-filter-box"
           src={require("../../img/Video_filter_box.png")}
