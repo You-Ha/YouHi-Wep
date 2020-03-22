@@ -39,4 +39,10 @@
   padding-bottom: 20px;
 }
 
+.emphasis {
+  display: inline;
+  color: black;
+  font-weight: 600
+}
+
 
