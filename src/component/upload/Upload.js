@@ -166,11 +166,7 @@ class Upload extends Component {
   // uploadFileToS3(file) {
   //   const AWS = require("aws-sdk");
   //   const BUCKET_NAME = "youhi";
-  //   const s3 = new AWS.S3({
-  //     accessKeyId: "AKIA2GA2ZTVSBJG3QYX2",
-  //     secretAccessKey: "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",
-  //     region: "ap-northeast-2"
-  //   });
+  //   const s3 = new AWS.S3({});
   //   const params = {
   //     Bucket: BUCKET_NAME,
   //     ContentType: file.type,
