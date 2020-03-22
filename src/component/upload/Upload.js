@@ -119,10 +119,10 @@
 
 import React, { Component } from "react";
 import UploadElementor from "./upload_elementor/UploadElementor";
-import Dropzone from "../dropzone/Dropzone";
+import Dropzone from "./dropzone/Dropzone";
 import "./Upload.css";
-import Progress from "../progress/Progress";
-import Text from "../../component/text";
+import Progress from "./progress/Progress";
+import Text from "./text/Text";
 
 class Upload extends Component {
   constructor(props) {
