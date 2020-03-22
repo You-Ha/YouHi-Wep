@@ -2,6 +2,7 @@
   width: 1903px;
   height: 282px;
   padding-top: 5px;
+  margin-bottom: 20px;
 }
 
 .tag2 {
@@ -27,6 +28,7 @@
   flex-wrap: wrap;
   width: 1120px;
   height: 262px;
+  padding-left: 14px;
 }
 
 .elementor-container {

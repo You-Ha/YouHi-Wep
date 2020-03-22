@@ -1,4 +1,4 @@
-.voice-wrapper {
+/* .voice-wrapper {
   width: 702px;
   margin-right: 60px;
 }
@@ -15,11 +15,11 @@
 
 
 #voice-filter {
-  /* overflow: scroll; */
+  overflow: scroll;
   background-color: #eeeeee;
   width: 700px;
   height: 382px;
   border: 1px solid #d1d5da;
   border-top: none;
-}
+} */
 

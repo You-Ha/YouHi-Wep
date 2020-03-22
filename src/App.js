@@ -1,9 +1,8 @@
 import React from "react";
 import Navbar from "./component/navbar";
-import Test from "./test/test";
-import Upload from "./component/upload";
-import Video from "./component/video";
-import Voice from "./component/voice";
+import Introduction from "./component/introduction/Introduction";
+import Upload from "./component/upload/Upload";
+import Filter from './component/filter/Filter'
 import "./App.css";
 
 function App() {
@@ -45,7 +44,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-
       <div className="first-container">
         <div className="first-container-flex-items-text">
           <div className="text-header">YouHi</div>
@@ -56,14 +54,9 @@ function App() {
         </div>
       </div>
       <div className="Total">
-        <Test />
+        <Introduction />
         <Upload />
-        <div className="filter-box">
-          {
-            <Video />
-            /*  <Voice /> */
-          }
-        </div>
+        <Filter />
       </div>
     </div>
   );
