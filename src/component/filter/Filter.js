@@ -8,8 +8,6 @@ const Filter = () => {
   return (
     <div className="Filter-container">
       <FilterElement />
-<<<<<<< HEAD
-=======
       <div className="Filter-filter-box">
         <img
           alt="video-filter-box"
@@ -23,7 +21,6 @@ const Filter = () => {
       <div className="Filter-feedback-button-wrapper">
         <button className="Filter-feedback-button">이의신청 및 문의하기</button>
       </div>
->>>>>>> filter_box_text
       {/* <Video />
       <Voice /> */}
     </div>
