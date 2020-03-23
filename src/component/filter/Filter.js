@@ -2,10 +2,11 @@ import React from "react";
 import Video from "./video/Video";
 import Voice from "./voice/Voice";
 import FilterElement from "./filter_elementor/FilterElementor";
+import "./Filter.css";
 
 const Filter = () => {
   return (
-    <div className="Filter-wrapper">
+    <div className="Filter-container">
       <FilterElement />
       <div className="Filter-filter-box">
         <img
@@ -16,6 +17,9 @@ const Filter = () => {
           alt="voice-filter-box"
           src={require("../../img/Voice_filter_box.png")}
         />
+      </div>
+      <div className="Filter-feedback-button-wrapper">
+        <button className="Filter-feedback-button">이의신청 및 문의하기</button>
       </div>
       {/* <Video />
       <Voice /> */}
