@@ -176,7 +176,7 @@ button {
   -ms-user-select: none;
   user-select: none;
   border: 0;
-  border-radius: 2px;
+  border-radius: 100px;
   /* background: rgba(103, 58, 183, 1); */
   background: rgb(99, 68, 198);
   color: #fff;
