@@ -156,7 +156,7 @@
   align-items: center;
 }
 
-button {
+/* button {
   font-family: "Roboto medium", sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -177,11 +177,11 @@ button {
   user-select: none;
   border: 0;
   border-radius: 100px;
-  /* background: rgba(103, 58, 183, 1); */
+  background: rgba(103, 58, 183, 1);
   background: rgb(99, 68, 198);
   color: #fff;
   outline: 0;
-}
+}  */
 
 .Upload-text-buttons-container {
   display: flex;
@@ -193,11 +193,11 @@ button {
   margin-top: 93px;
 }
 
-.upload-button {
+.Upload-upload-button {
   margin-right: 30px;
 }
 
-.upload-button .filter-button {
+.Upload-button {
   font-family: "Roboto medium", sans-serif;
   font-size: 14px;
   font-weight: 600;

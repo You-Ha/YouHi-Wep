@@ -306,27 +306,27 @@ class Upload extends Component {
       return (
         <div className="Actions">
           <button
-            className="upload-button"
+            className="Upload-button Upload-upload-button"
             onClick={() =>
               this.setState({ files: [], successfullUploaded: false })
             }
           >
             Clear
           </button>
-          <button className="filter-button">필터</button>
+          <button className="Upload-button Upload-filter-button">필터</button>
         </div>
       );
     } else {
       return (
         <div className="Actions">
           <button
-            className="upload-button"
+            className="Upload-button Upload-upload-button"
             disabled={this.state.files.length < 0 || this.state.uploading}
             onClick={this.uploadFiles}
           >
             업로드
           </button>
-          <button className="filter-button">필터</button>
+          <button className="Upload-button Upload-filter-button">필터</button>
         </div>
       );
     }
