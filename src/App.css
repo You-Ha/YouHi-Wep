@@ -35,7 +35,8 @@ body {
   height: 520px;
   background-image: url(./img/background_img.png);
   background-repeat: no-repeat;
-  background-size: 1919px 820px;
+  /* background-size: 1919px 820px; */
+  background-size: cover;
   background-attachment: fixed;
   align-items: center;
   justify-content: center;
