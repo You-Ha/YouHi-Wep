@@ -341,7 +341,7 @@ class Upload extends Component {
             onFilesAdded={this.onFilesAdded}
             disabled={this.state.uploading || this.state.successfullUploaded}
           />
-          <div className="text-buttons">
+          <div className="Upload-text-buttons-container">
             <Text />
             <div className="Files">
               {this.state.files.map(file => {
