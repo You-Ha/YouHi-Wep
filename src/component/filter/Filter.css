@@ -7,6 +7,22 @@
   justify-content: space-evenly;
 }
 
+.Filter-box {
+  width: 684px;
+  height: 493px;
+}
+
+.Filter-video-filter {
+  background-image: url("../../img/Video_filter_box.png");
+  cursor: pointer;
+}
+
+.Filter-voice-filter {  
+  background-image: url("../../img/Voice_filter_box.png");
+  cursor: pointer;
+}
+
+
 .Filter-feedback-button-wrapper {
   display: flex;
   width: 100%;

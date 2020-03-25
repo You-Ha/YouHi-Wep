@@ -137,7 +137,7 @@ class Upload extends Component {
     this.onFilesAdded = this.onFilesAdded.bind(this);
     this.uploadFiles = this.uploadFiles.bind(this);
     this.sendRequest = this.sendRequest.bind(this);
-    this.renderUploadActions = this.renderActions.bind(this);
+    this.renderActions = this.renderActions.bind(this);
     //   this.uploadFileToS3 = this.uploadFileToS3.bind(this);
   }
 
@@ -306,27 +306,27 @@ class Upload extends Component {
       return (
         <div className="Actions">
           <button
-            className="upload-button"
+            className="Upload-button Upload-upload-button"
             onClick={() =>
               this.setState({ files: [], successfullUploaded: false })
             }
           >
             Clear
           </button>
-          <button className="filter-button">필터</button>
+          <button className="Upload-button Upload-filter-button">필터</button>
         </div>
       );
     } else {
       return (
         <div className="Actions">
           <button
-            className="upload-button"
+            className="Upload-button Upload-upload-button"
             disabled={this.state.files.length < 0 || this.state.uploading}
             onClick={this.uploadFiles}
           >
             업로드
           </button>
-          <button className="filter-button">필터</button>
+          <button className="Upload-button Upload-filter-button">필터</button>
         </div>
       );
     }
@@ -341,7 +341,7 @@ class Upload extends Component {
             onFilesAdded={this.onFilesAdded}
             disabled={this.state.uploading || this.state.successfullUploaded}
           />
-          <div className="text-buttons">
+          <div className="Upload-text-buttons-container">
             <Text />
             <div className="Files">
               {this.state.files.map(file => {
