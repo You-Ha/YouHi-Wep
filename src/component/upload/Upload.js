@@ -137,7 +137,7 @@ class Upload extends Component {
     this.onFilesAdded = this.onFilesAdded.bind(this);
     this.uploadFiles = this.uploadFiles.bind(this);
     this.sendRequest = this.sendRequest.bind(this);
-    this.renderUploadActions = this.renderActions.bind(this);
+    this.renderActions = this.renderActions.bind(this);
     //   this.uploadFileToS3 = this.uploadFileToS3.bind(this);
   }
 
