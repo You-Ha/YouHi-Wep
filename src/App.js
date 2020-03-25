@@ -44,15 +44,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="first-container">
-        <div className="first-container-flex-items-text">
-          <div className="text-header">YouHi</div>
-          <div className="text-descrip">
-            Video upload filtering application <br />
-            designed to provide safe video for minors.
-          </div>
-        </div>
-      </div>
       <div className="Total">
         <Introduction />
         <Upload />
