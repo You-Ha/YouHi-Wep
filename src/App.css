@@ -29,6 +29,7 @@ body {
   font-family: 'Roboto';
 }
 
+<<<<<<< HEAD
 .first-container {
   display: flex;
   color: #fff;
@@ -68,6 +69,8 @@ body {
   margin-top: 60px;
 }
 
+=======
+>>>>>>> 78d2ac5d48dae5b637a9315673d2e31d768ce311
 .upload-text-container {
   display: flex;
   flex-direction: column;
@@ -79,9 +82,7 @@ body {
 .Total {
   display: flex;
   flex-direction: column;
-  /* flex: 1 1 auto;*/
   align-items: center;
-  flex-wrap: wrap;
 }
 /* 
 .filter-box {
