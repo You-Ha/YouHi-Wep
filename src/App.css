@@ -35,13 +35,13 @@ body {
   height: 520px;
   background-image: url(./img/background_img.png);
   background-repeat: no-repeat;
-  background-size: 1919px 820px;
+  background-size: 100% 820px;
   background-attachment: fixed;
   align-items: center;
   justify-content: center;
 }
 
-.first-container-flex-items-text {
+/* .first-container-flex-items-text {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -49,7 +49,7 @@ body {
   height: inherit;
   padding-bottom: 55px;
   padding-left: 400px;
-}
+} */
 
 .text-header {
   width: 505px;
@@ -61,7 +61,6 @@ body {
 
 .text-descrip {
   font-size: 17px;
-  line-height: 35px;
   text-align: center;
   line-height: 1.5;
   letter-spacing: -0.5px;
@@ -84,12 +83,12 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-
+/* 
 .filter-box {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
+} */
 
 /*
 .App-logo {
