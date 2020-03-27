@@ -19,110 +19,14 @@
         url(./Font/Roboto-Bold.woff) format('woff'),
         url(./Font/Roboto-Bold.otf) format('opentype'); }
 
-/* .App {
-  
-} */
-
 body {
   height: 1500px;
   background-color: #fff;
   font-family: 'Roboto';
 }
 
-<<<<<<< HEAD
-.first-container {
-  display: flex;
-  color: #fff;
-  height: 520px;
-  background-image: url(./img/background_img.png);
-  background-repeat: no-repeat;
-  background-size: 100% 820px;
-  background-attachment: fixed;
-  align-items: center;
-  justify-content: center;
-}
-
-/* .first-container-flex-items-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 505px;
-  height: inherit;
-  padding-bottom: 55px;
-  padding-left: 400px;
-} */
-
-.text-header {
-  width: 505px;
-  height: 128px;
-  font-size: 130px;
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.text-descrip {
-  font-size: 17px;
-  text-align: center;
-  line-height: 1.5;
-  letter-spacing: -0.5px;
-  margin-bottom: 60px;
-  margin-top: 60px;
-}
-
-=======
->>>>>>> 78d2ac5d48dae5b637a9315673d2e31d768ce311
-.upload-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  width: 1903px;
-}
-
 .Total {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
-/* 
-.filter-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-} */
-
-/*
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
