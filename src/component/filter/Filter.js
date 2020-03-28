@@ -26,14 +26,14 @@ class Filter extends Component {
         <FilterElement />
         <div className = "filter-wrapper">
           <div className="Filter-filter-box">
-            <div className = "video-filter-wrapper">
+            <div className = "inner-filter-wrapper">
               <button
                 className="Filter-box Filter-video-filter"
                 onClick={this.showFilterResult}
               />
             </div>
-            <div className = "filter-box-space"></div>
-            <div className = "voice-filter-wrapper">
+            
+            <div className = "inner-filter-wrapper">
               <button className="Filter-box Filter-voice-filter" />
             </div>
           </div>
