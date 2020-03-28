@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "./component/navbar/Navbar";
 import Introduction from "./component/introduction/Introduction";
 import Upload from "./component/upload/Upload";
-import Filter from './component/filter/Filter'
+import Filter from './component/filter/Filter';
+import Footer from './component/footer/footer';
 import "./App.css";
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Upload />
         <Filter />
       </div>
+      <Footer />
     </div>
   );
 }

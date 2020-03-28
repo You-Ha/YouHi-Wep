@@ -1,24 +1,39 @@
 .Filter-container {
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .Filter-filter-box {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.filter-wrapper {
+  width: 100%;
+  height: auto;
 }
 
 .Filter-box {
   width: 684px;
   height: 493px;
+  flex-wrap: wrap;
+}
+
+.filter-box-space {
+  width: 70px;
 }
 
 .Filter-video-filter {
+  /* max-width: 684px; */
+  /* height: auto; */
   background-image: url("../../img/Video_filter_box.png");
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 
-.Filter-voice-filter {  
+.Filter-voice-filter {
   background-image: url("../../img/Voice_filter_box.png");
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 

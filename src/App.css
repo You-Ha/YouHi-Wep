@@ -1,4 +1,4 @@
-@font-face {  font-family: 'Roboto';  font-style: normal;  font-weight: 100;
+/* @font-face {  font-family: 'Roboto';  font-style: normal;  font-weight: 100;
   src: url(./Font/Roboto-Thin.woff2) format('woff2'),
        url(./Font/Roboto-Thin.woff) format('woff'),
        url(./Font/Roboto-Thin.otf) format('opentype');}
@@ -17,19 +17,18 @@
 @font-face {   font-family: 'Roboto';   font-style: normal;   font-weight: 700;
    src: url(./Font/Roboto-Bold.woff2) format('woff2'),
         url(./Font/Roboto-Bold.woff) format('woff'),
-        url(./Font/Roboto-Bold.otf) format('opentype'); }
+        url(./Font/Roboto-Bold.otf) format('opentype'); } */
 
 /* .App {
   
 } */
 
-body {
+/* body {
   height: 1500px;
   background-color: #fff;
   font-family: 'Roboto';
 }
 
-<<<<<<< HEAD
 .first-container {
   display: flex;
   color: #fff;
@@ -40,7 +39,7 @@ body {
   background-attachment: fixed;
   align-items: center;
   justify-content: center;
-}
+} */
 
 /* .first-container-flex-items-text {
   display: flex;
@@ -52,7 +51,7 @@ body {
   padding-left: 400px;
 } */
 
-.text-header {
+/* .text-header {
   width: 505px;
   height: 128px;
   font-size: 130px;
@@ -69,8 +68,6 @@ body {
   margin-top: 60px;
 }
 
-=======
->>>>>>> 78d2ac5d48dae5b637a9315673d2e31d768ce311
 .upload-text-container {
   display: flex;
   flex-direction: column;
@@ -81,9 +78,11 @@ body {
 
 .Total {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  flex-direction: column;ㄴ
+  /* flex: 1 1 auto;*/
+  /* align-items: center;
+  flex-wrap: wrap;
+} */
 /* 
 .filter-box {
   display: flex;
@@ -125,4 +124,30 @@ body {
   to {
     transform: rotate(360deg);
   }
+} */
+/* 
+body {
+  height: 1500px;
+  background-color: #fff;
+  font-family: 'Roboto';
+}
+
+.upload-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 1903px;
+} */
+
+.Total {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+/* 
+.filter-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 } */

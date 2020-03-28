@@ -1,10 +1,9 @@
 .tag1 {
-  width: 1903px;
-  height: 282px;
-  padding-top: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 }
-
+/*
 .tag2 {
   max-width: 1140px;
   height: 282px;
@@ -22,19 +21,17 @@
   width: 1120px;
   height: 262px;
 }
-
 .tag5 {
   display: flex;
-  flex-wrap: wrap;
-  width: 1120px;
-  height: 262px;
-  padding-left: 14px;
-}
+  flex-direction: column;
+  justify-content: flex-end;
+}  */
 
 .elementor-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
   width: 1120px;
   height: 108px;
   margin-bottom: 30px;
@@ -45,7 +42,7 @@
   font-style: italic;
   font-weight: 900;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .elementor-heading-bar {
@@ -82,10 +79,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 505px;
+  /* width: 505px; */
   height: inherit;
   padding-bottom: 55px;
-  padding-left: 400px;
 }
 
 .text-header {
@@ -98,7 +94,7 @@
 
 .text-descrip {
   font-size: 17px;
-  line-height: 35px;
+  /* line-height: 35px; */
   text-align: center;
   line-height: 1.5;
   letter-spacing: -0.5px;
