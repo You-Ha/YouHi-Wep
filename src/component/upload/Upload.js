@@ -124,6 +124,8 @@ import "./Upload.css";
 import Progress from "./progress/Progress";
 import Text from "./text/Text";
 
+var signedURL;
+
 class Upload extends Component {
   constructor(props) {
     super(props);
@@ -262,22 +264,41 @@ class Upload extends Component {
       // **aws s3 upload**
       // this.uploadFile(file);
 
-      var data = new FormData();
-      data.append("file", file, file.name);
+      ////////////////////////////////////////////////////////////////////////////////
 
-      req.addEventListener("readystatechange", function() {
+      var xhr = new XMLHttpRequest();
+
+      xhr.addEventListener("readystatechange", function() {
         if (this.readyState === 4) {
-          console.log(this.response.data);
+          // console.log(this.responseText);
+          signedURL = JSON.parse(this.responseText);
+          console.log(signedURL.signed_url);
+
+          var data = new FormData();
+          data.append("file", file, file.name);
+
+          // req.addEventListener("readystatechange", function() {
+          //   if (this.readyState === 4) {
+          //     console.log(this.response.body);
+          //   }
+          // });
+          
+          req.open(
+            "PUT",
+            // "https://g1ngfl8yke.execute-api.ap-northeast-2.amazonaws.com/prod/"
+            signedURL.signed_url
+          );
+          // req.setRequestHeader("content-type", "application/xml")
+          req.send(file);
         }
       });
 
-      req.open(
-        "POST",
-        "https://mt8btt2a0k.execute-api.ap-northeast-2.amazonaws.com/prod/"
+      xhr.open(
+        "GET",
+        `https://j2s6y0lok9.execute-api.ap-northeast-2.amazonaws.com/prod/%7Bproxy+7D?name=${file.name}`
       );
-      // req.setRequestHeader("Content-Type", "multipart/form-data");
 
-      req.send(data);
+      xhr.send();
     });
   }
 
