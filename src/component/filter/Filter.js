@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import FilterElement from "./filter_elementor/FilterElementor";
+import Modal from "react-modal"
 import "./Filter.css";
-import NewWindow from "react-new-window";
+// import NewWindow from "react-new-window";
 
 class Filter extends Component {
   constructor(props) {
