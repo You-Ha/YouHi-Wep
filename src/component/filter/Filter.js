@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import FilterElement from "./filter_elementor/FilterElementor";
 import Modal from "react-modal";
-import { Scrollbars } from "react-custom-scrollbars";
 import "./Filter.css";
 // import NewWindow from "react-new-window";
 
