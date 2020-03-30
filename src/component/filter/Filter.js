@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import FilterElement from "./filter_elementor/FilterElementor";
-import Modal from "react-modal";
 import "./Filter.css";
-// import NewWindow from "react-new-window";
-
-Modal.setAppElement("#root");
+import VideoBox from "./video/Video";
+import VoiceBox from "./voice/Voice";
 
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
-
+    this.state = {};
   }
 
   render() {
@@ -21,13 +17,10 @@ class Filter extends Component {
         <div className="filter-wrapper">
           <div className="Filter-filter-box">
             <div className="inner-filter-wrapper">
-              <button
-                className="Filter-box Filter-video-filter"
-                onClick={this.openModal}
-              />
+              <VideoBox />
             </div>
             <div className="inner-filter-wrapper">
-              <button className="Filter-box Filter-voice-filter" />
+              <VoiceBox />
             </div>
           </div>
         </div>
