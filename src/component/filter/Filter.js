@@ -10,33 +10,8 @@ class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalIsOpen: false
     };
 
-    this.showFilterResult = this.showFilterResult.bind(this);
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-
-  openModal() {
-    this.setState({ modalIsOpen: true });
-  }
-
-  afterOpenModal() {}
-
-  closeModal() {
-    this.setState({ modalIsOpen: false });
-  }
-
-  showFilterResult() {
-    var wFeature =
-      "width=500, height=500, location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes";
-    var w = window.open("/filter", "_blank", wFeature);
-    w.document.write(`<title>Filter</title>`);
-    w.document.write(
-      `<img src="static/media/background_img.3ccc4efd.png" width="300px"> 안녕`
-    );
   }
 
   render() {
