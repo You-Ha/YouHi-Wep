@@ -51,29 +51,7 @@ class Filter extends Component {
                 className="Filter-box Filter-video-filter"
                 onClick={this.openModal}
               />
-              <Modal
-                isOpen={this.state.modalIsOpen}
-                onAfterOpen={this.afterOpenModal}
-                onRequestClose={this.closeModal}
-                className="Filter-modal"
-                // overlayClassName="'Filter-modal-overlay"
-              >
-                <Scrollbars
-                  style={{ height: 420 }}
-                  renderTrackHorizontal={props => (
-                    <div
-                      {...props}
-                      style={{ display: "none" }}
-                      className="track-horizontal"
-                    />
-                  )}
-                >
-                  hello<br />
-                </Scrollbars>
-                {/* <button onClick={this.closeModal}>close</button> */}
-              </Modal>
             </div>
-
             <div className="inner-filter-wrapper">
               <button className="Filter-box Filter-voice-filter" />
             </div>
