@@ -170,8 +170,6 @@ class Upload extends Component {
   //   const AWS = require("aws-sdk");
   //   const BUCKET_NAME = "s3-uploadtest3";
   //   const s3 = new AWS.S3({
-  //     accessKeyId: "AKIA3GJFVFWENZI44KHT",
-  //     secretAccessKey: "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",
   //     region: "ap-northeast-2"
   //   });
   //   const params = {
