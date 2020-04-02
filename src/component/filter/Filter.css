@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-around;
 }
+
 .inner-filter-wrapper {
   width: 45%;
 }
@@ -17,30 +18,8 @@
   height: 100%;
 }
 
-.Filter-box {
-  width: 100%;
-  height: calc(45vw * 493 / 684);
-}
-
 .filter-box-space {
   width: 70px;
-}
-
-.Filter-video-filter {
-  /* max-width: 684px; */
-  /* height: auto; */
-  background-image: url('../../img/Video_filter_box.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border-width: 0;
-  cursor: pointer;
-}
-.Filter-voice-filter {
-  background-image: url('../../img/Voice_filter_box.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border-width: 0;
-  cursor: pointer;
 }
 
 .Filter-feedback-button-wrapper {

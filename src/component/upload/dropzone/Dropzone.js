@@ -21,7 +21,7 @@ class Dropzone extends Component {
 
   onFilesAdded(evt) {
     if (this.props.disabled) return;
-    const files = evt.target.files;
+    const files = evt.target.files; 
     if (this.props.onFilesAdded) {
       const array = this.fileListToArray(files);
       this.props.onFilesAdded(array);
@@ -78,6 +78,7 @@ class Dropzone extends Component {
           alt="upload"
           className="Icon"
           src={require("../../../img/icon.png")}
+          // src="baseline-cloud_upload-24px.svg"
         />
         <span>
           동영상을 '여기' 끌어다 놓거나

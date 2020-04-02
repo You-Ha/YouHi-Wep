@@ -140,7 +140,7 @@ class Upload extends Component {
     this.uploadFiles = this.uploadFiles.bind(this);
     this.sendRequest = this.sendRequest.bind(this);
     this.renderActions = this.renderActions.bind(this);
-    //   this.uploadFileToS3 = this.uploadFileToS3.bind(this);
+    //this.uploadFileToS3 = this.uploadFileToS3.bind(this);
   }
 
   onFilesAdded(files) {
@@ -153,6 +153,7 @@ class Upload extends Component {
     this.setState({ uploadProgress: {}, uploading: true });
     const promises = [];
     this.state.files.forEach(file => {
+      // promises.push(this.uploadFileToS3(file));
       promises.push(this.sendRequest(file));
     });
     try {
@@ -167,8 +168,10 @@ class Upload extends Component {
 
   // uploadFileToS3(file) {
   //   const AWS = require("aws-sdk");
-  //   const BUCKET_NAME = "youhi";
-  //   const s3 = new AWS.S3({});
+  //   const BUCKET_NAME = "s3-uploadtest3";
+  //   const s3 = new AWS.S3({
+  //     region: "ap-northeast-2"
+  //   });
   //   const params = {
   //     Bucket: BUCKET_NAME,
   //     ContentType: file.type,
@@ -176,7 +179,7 @@ class Upload extends Component {
   //     Body: file,
   //     ACL: "public-read"
   //   };
-  //   copy = this.state.uploadProgress;
+  //   // copy = this.state.uploadProgress;
   //   return new Promise((resolve, reject) => {
   //     s3.upload(params, function(err, data) {
   //       if (err) {
