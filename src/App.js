@@ -45,11 +45,9 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="Total">
-        <Introduction />
-        <Upload />
-        <Filter />
-      </div>
+      <Introduction />
+      <Upload />
+      <Filter />
       <Footer />
     </div>
   );
