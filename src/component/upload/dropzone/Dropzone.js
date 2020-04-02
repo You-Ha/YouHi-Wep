@@ -77,7 +77,7 @@ class Dropzone extends Component {
         <img
           alt="upload"
           className="Icon"
-          src={require("../../../img/icon.png")}
+          src={require("../../../img/dropzone.png")}
           // src="baseline-cloud_upload-24px.svg"
         />
         <span>
