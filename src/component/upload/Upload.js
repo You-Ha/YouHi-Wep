@@ -125,6 +125,9 @@ import Progress from "./progress/Progress";
 import Text from "./text/Text";
 
 var signedURL;
+var account;
+const io = require("socket.io-client"),
+      ioClient = io.connect("http://13.125.127.181:4567");
 
 class Upload extends Component {
   constructor(props) {
@@ -133,27 +136,33 @@ class Upload extends Component {
       files: [],
       uploading: false,
       uploadProgress: {},
-      successfullUploaded: false
+      successfullUploaded: false,
     };
 
     this.onFilesAdded = this.onFilesAdded.bind(this);
     this.uploadFiles = this.uploadFiles.bind(this);
     this.sendRequest = this.sendRequest.bind(this);
     this.renderActions = this.renderActions.bind(this);
-    //this.uploadFileToS3 = this.uploadFileToS3.bind(this);
   }
 
   onFilesAdded(files) {
-    this.setState(prevState => ({
-      files: prevState.files.concat(files)
+    this.setState((prevState) => ({
+      files: prevState.files.concat(files),
     }));
+    
+    ioClient.emit("ready", `${files[0].name}`);
+    ioClient.on("number", function(data) {
+      account = data;
+    });
+    ioClient.on("abc", function (data) {
+        console.log(data);
+      });
   }
 
   async uploadFiles() {
     this.setState({ uploadProgress: {}, uploading: true });
     const promises = [];
-    this.state.files.forEach(file => {
-      // promises.push(this.uploadFileToS3(file));
+    this.state.files.forEach((file) => {
       promises.push(this.sendRequest(file));
     });
     try {
@@ -225,25 +234,25 @@ class Upload extends Component {
     return new Promise((resolve, reject) => {
       const req = new XMLHttpRequest();
 
-      req.upload.addEventListener("progress", event => {
+      req.upload.addEventListener("progress", (event) => {
         if (event.lengthComputable) {
           const copy = { ...this.state.uploadProgress };
           copy[file.name] = {
             state: "pending",
-            percentage: (event.loaded / event.total) * 100
+            percentage: (event.loaded / event.total) * 100,
           };
           this.setState({ uploadProgress: copy });
         }
       });
 
-      req.upload.addEventListener("load", event => {
+      req.upload.addEventListener("load", (event) => {
         const copy = { ...this.state.uploadProgress };
         copy[file.name] = { state: "done", percentage: 100 };
         this.setState({ uploadProgress: copy });
         resolve(req.response);
       });
 
-      req.upload.addEventListener("error", event => {
+      req.upload.addEventListener("error", (event) => {
         const copy = { ...this.state.uploadProgress };
         copy[file.name] = { state: "error", percentage: 0 };
         this.setState({ uploadProgress: copy });
@@ -259,10 +268,18 @@ class Upload extends Component {
       // );
       // req.send(formData);
 
-      // **socket connection**
+      // **socket connection-1**
       // const io = require("socket.io-client"),
       //   ioClient = io.connect("http://3.17.20.240:1234");
       // ioClient.emit("msg", "x");
+
+      // **socket connection-1**
+      //   const io = require("socket.io-client"),
+      //   ioClient = io.connect("http://54.180.103.231:1234");
+      //   ioClient.emit("msg", "sibar");
+      //   ioClient.on('msg', function(data) {
+      //     console.log(data);
+      //   });
 
       // **aws s3 upload**
       // this.uploadFile(file);
@@ -270,37 +287,34 @@ class Upload extends Component {
       ////////////////////////////////////////////////////////////////////////////////
 
       var xhr = new XMLHttpRequest();
-
-      xhr.addEventListener("readystatechange", function() {
+      xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
           // console.log(this.responseText);
           signedURL = JSON.parse(this.responseText);
           console.log(signedURL.signed_url);
-
+          console.log(signedURL.requestId);
           var data = new FormData();
-          data.append("file", file, file.name);
+          data.append("file", file, `${account.value}`);
 
           // req.addEventListener("readystatechange", function() {
           //   if (this.readyState === 4) {
           //     console.log(this.response.body);
           //   }
           // });
-          
           req.open(
             "PUT",
             // "https://g1ngfl8yke.execute-api.ap-northeast-2.amazonaws.com/prod/"
             signedURL.signed_url
           );
+          // req.setRequestHeader('ID', 'inpyeong');
           // req.setRequestHeader("content-type", "application/xml")
           req.send(file);
         }
       });
-
       xhr.open(
         "GET",
-        `https://j2s6y0lok9.execute-api.ap-northeast-2.amazonaws.com/prod/%7Bproxy+7D?name=${file.name}`
+        `https://j2s6y0lok9.execute-api.ap-northeast-2.amazonaws.com/prod/%7Bproxy+7D?name=${account.value}`
       );
-
       xhr.send();
     });
   }
@@ -317,7 +331,7 @@ class Upload extends Component {
             src={require("../../img/check_circle.png")}
             style={{
               opacity:
-                uploadProgress && uploadProgress.state === "done" ? 0.5 : 0
+                uploadProgress && uploadProgress.state === "done" ? 0.5 : 0,
             }}
           />
         </div>
@@ -337,7 +351,7 @@ class Upload extends Component {
           >
             Clear
           </button>
-          <button className="Upload-button Upload-filter-button">필터</button>
+          <button className="Upload-button Upload-filter-button" onClick={this.filter}>필터</button>
         </div>
       );
     } else {
@@ -350,7 +364,11 @@ class Upload extends Component {
           >
             업로드
           </button>
-          <button className="Upload-button Upload-filter-button">필터</button>
+          <button
+            className="Upload-button Upload-filter-button"
+          >
+            필터
+          </button>
         </div>
       );
     }
@@ -368,7 +386,7 @@ class Upload extends Component {
           <div className="Upload-text-buttons-container">
             <Text />
             <div className="Files">
-              {this.state.files.map(file => {
+              {this.state.files.map((file) => {
                 return (
                   <div key={file.name} className="Row">
                     <span className="Filename">{file.name}</span>
