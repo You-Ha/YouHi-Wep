@@ -126,8 +126,8 @@ import Text from "./text/Text";
 
 var signedURL;
 var account;
-const io = require("socket.io-client"),
-      ioClient = io.connect("http://13.125.127.181:4567");
+const io = require("socket.io-client");
+const ioClient = io.connect("http://13.125.127.181:4567");
 
 class Upload extends Component {
   constructor(props) {
