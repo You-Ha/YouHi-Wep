@@ -4,7 +4,7 @@ import "./Dropzone.css";
 class Dropzone extends Component {
   constructor(props) {
     super(props);
-    this.state = { hightlight: false };
+    this.state = { highlight: false };
     this.fileInputRef = React.createRef();
 
     this.openFileDialog = this.openFileDialog.bind(this);
@@ -30,23 +30,23 @@ class Dropzone extends Component {
 
   onDragOver(event) {
     event.preventDefault();
-    if (this.props.disabed) return;
-    this.setState({ hightlight: true });
+    if (this.props.disabled) return;
+    this.setState({ highlight: true });
   }
 
   onDragLeave(event) {
-    this.setState({ hightlight: false });
+    this.setState({ highlight: false });
   }
 
   onDrop(event) {
     event.preventDefault();
-    if (this.props.disabed) return;
+    if (this.props.disabled) return;
     const files = event.dataTransfer.files;
     if (this.props.onFilesAdded) {
       const array = this.fileListToArray(files);
       this.props.onFilesAdded(array);
     }
-    this.setState({ hightlight: false });
+    this.setState({ highlight: false });
   }
 
   fileListToArray(list) {
@@ -60,7 +60,7 @@ class Dropzone extends Component {
   render() {
     return (
       <div
-        className={`Dropzone ${this.state.hightlight ? "Highlight" : ""}`}
+        className={`Dropzone ${this.state.highlight ? "Highlight" : ""}`}
         onDragOver={this.onDragOver}
         onDragLeave={this.onDragLeave}
         onDrop={this.onDrop}
