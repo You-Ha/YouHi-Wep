@@ -142,6 +142,7 @@ class Upload extends Component {
     this.onFilesAdded = this.onFilesAdded.bind(this);
     this.uploadFiles = this.uploadFiles.bind(this);
     this.sendRequest = this.sendRequest.bind(this);
+    this.orderFilter = this.orderFilter.bind(this);
     this.renderActions = this.renderActions.bind(this);
   }
 
@@ -339,6 +340,10 @@ class Upload extends Component {
     }
   }
 
+  orderFilter() {
+    
+  }
+
   renderActions() {
     if (this.state.successfullUploaded) {
       return (
@@ -366,6 +371,7 @@ class Upload extends Component {
           </button>
           <button
             className="Upload-button Upload-filter-button"
+            disabled="true"
           >
             필터
           </button>
