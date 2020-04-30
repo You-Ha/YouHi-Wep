@@ -1,10 +1,13 @@
 import React from "react";
 import './Video.css';
 
-const Video = () => {
+const Video = props => {
   return (
-    <div>
-      <button className="Filter-box Filter-video-filter" />
+    <div className="Video">
+      <button 
+        className="Filter-box Filter-video-filter"
+        disabled={!props.successfulFiltered}
+      />
     </div>
   );
 };

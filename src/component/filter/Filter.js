@@ -17,10 +17,10 @@ class Filter extends Component {
         <div className="filter-wrapper">
           <div className="Filter-filter-box">
             <div className="inner-filter-wrapper">
-              <VideoBox />
+              <VideoBox successfulFiltered={this.props.successfulFiltered}/>
             </div>
             <div className="inner-filter-wrapper">
-              <VoiceBox />
+              <VoiceBox successfulFiltered={this.props.successfulFiltered}/>
             </div>
           </div>
         </div>

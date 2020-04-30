@@ -137,6 +137,7 @@ class Upload extends Component {
       uploading: false,
       uploadProgress: {},
       successfullUploaded: false,
+      successfullFiltered: false,
     };
 
     this.onFilesAdded = this.onFilesAdded.bind(this);
@@ -341,7 +342,10 @@ class Upload extends Component {
   }
 
   orderFilter() {
-    
+    // ioClient.emit("ready", ``);
+    // ioClient.on("??", function(data) {
+      this.props.func();
+    // });
   }
 
   renderActions() {
@@ -371,7 +375,8 @@ class Upload extends Component {
           </button>
           <button
             className="Upload-button Upload-filter-button"
-            disabled="true"
+            disabled={this.state.successfullFiltered}
+            onClick={this.orderFilter}
           >
             필터
           </button>
