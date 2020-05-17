@@ -12,7 +12,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 1500px;
+  height: 800px;
   border-radius: 10px;
   background-color: white;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
@@ -33,6 +34,8 @@
 .Modal .content {
   border-top: 1px solid #bebebe;
   margin-top: 16px;
+  margin-bottom: 100px;
+  background-repeat: no-repeat;
 }
 .Modal .content p {
   padding: 8px;
@@ -102,4 +105,36 @@
 .Modal-scrollbars {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.video-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-text {
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: black 1px;
+}
+.img-con {
+  flex-direction: row;
+  height:50%;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.video-con {
+  width: 1000px;
+}
+
+.text-con {
+  flex-direction: row;
+  text-align: center;
+  font-size:15px;
+  font-weight: 500;
+}
+
+.space-between{
+  width: 20px;
 }

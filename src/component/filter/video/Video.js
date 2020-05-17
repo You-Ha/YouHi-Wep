@@ -1,4 +1,4 @@
-import React from "react";
+import React , { Component , useState } from "react";
 import './Video.css';
 
 const Video = props => {

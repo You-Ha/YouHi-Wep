@@ -27,3 +27,6 @@ body {
   flex-direction: column;
 }
 
+.player-test {
+     justify-content: center;
+}

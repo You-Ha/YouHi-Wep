@@ -18,10 +18,13 @@
     "react-dropzone": "^10.2.1",
     "react-modal": "^3.11.2",
     "react-new-window": "^0.1.2",
+    "react-player": "^2.0.1",
     "react-router-dom": "^5.1.2",
+    "react-script": "^2.0.5",
     "react-scripts": "3.4.0",
     "socket.io-client": "^2.3.0",
     "socketio": "^1.0.0",
+    "start": "^5.1.0",
     "styled-components": "^5.1.0"
   },
   "scripts": {
