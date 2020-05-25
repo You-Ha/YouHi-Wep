@@ -127,13 +127,14 @@ import Text from "./text/Text";
 var signedURL;
 var account;
 const io = require("socket.io-client");
-const ioClient = io.connect("http://13.125.127.181:4567");
+const ioClient = io.connect("http://13.209.93.181:4567");
 
 class Upload extends Component {
   constructor(props) {
     super(props);
     this.state = {
       files: [],
+      fileName: "",
       uploading: false,
       uploadProgress: {},
       successfullUploaded: false,
@@ -153,12 +154,15 @@ class Upload extends Component {
     }));
     
     ioClient.emit("ready", `${files[0].name}`);
+    // this.setState({ fileName: `${files[0].name}`});
+    // console.log(this.state.fileName);
     ioClient.on("number", function(data) {
       account = data;
     });
-    ioClient.on("abc", function (data) {
+    ioClient.on("upload", function (data) {
         console.log(data);
-      });
+        // 여기서 filter button이 활성화되어야 한다.
+    });
   }
 
   async uploadFiles() {
@@ -342,9 +346,14 @@ class Upload extends Component {
   }
 
   orderFilter() {
-    // ioClient.emit("ready", ``);
+    // 검열을 시작하라는 메시지를 소켓 서버에게 보낸다.
+    // console.log(this.state.fileName);
+    console.log(`${account.value}`);
+    ioClient.emit("filter", `${account.value}`);
+
+    // 검열이 끝나면 소켓 서버로부터 수신받는 코드, 검열 확인 박스를 활성화 시켜야함.
     // ioClient.on("??", function(data) {
-      this.props.func();
+    //   this.props.func();
     // });
   }
 
@@ -360,7 +369,7 @@ class Upload extends Component {
           >
             Clear
           </button>
-          <button className="Upload-button Upload-filter-button" onClick={this.filter}>필터</button>
+          <button className="Upload-button Upload-filter-button" onClick={this.orderFilter}>필터</button>
         </div>
       );
     } else {
@@ -376,7 +385,6 @@ class Upload extends Component {
           <button
             className="Upload-button Upload-filter-button"
             disabled={this.state.successfullFiltered}
-            onClick={this.orderFilter}
           >
             필터
           </button>
