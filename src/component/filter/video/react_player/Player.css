@@ -1,0 +1,44 @@
+.Player {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.section {
+  display: inline-block;
+  max-width: 1000px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.player-wrapper {
+  width: 1000px;
+}
+
+.Player-info-wrapper {
+  display: flex;
+}
+
+.Player-info-label {
+  width: 100%;
+}
+
+.react-player {
+  background: #f6f6f6;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 19px 51px 0 rgba(0, 0, 0, 0.16),
+    0 14px 19px 0 rgba(0, 0, 0, 0.07);
+}
+
+.Player-scrollbars {
+  width: 100%;
+  text-align: center;
+}
+
+.Player-info-wrapper {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  align-items: center;
+}

@@ -4,7 +4,7 @@ import Upload from "./component/upload/Upload";
 import Filter from './component/filter/Filter';
 import Footer from './component/footer/footer';
 import "./App.css";
-import Player from "./component/player";
+// import Player from "./component/player";
 
 function Home() {
   //   fetch ("https://naveropenapi.apigw.ntruss.com/recog/v1/stt?lang=${language}")
@@ -47,8 +47,8 @@ function Home() {
       <div className="Total">
         <Introduction />
         <Upload />
-        <Filter />
-        <Player />
+        <Filter successfulFiltered={true} />
+        {/* <Player /> */}
       </div>
       <Footer />
     </div>

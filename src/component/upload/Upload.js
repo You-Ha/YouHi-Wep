@@ -350,7 +350,9 @@ class Upload extends Component {
     // console.log(this.state.fileName);
     console.log(`${account.value}`);
     ioClient.emit("filter", `${account.value}`);
-
+    ioClient.on("result", function(data) {
+      console.log(data);
+    });
     // 검열이 끝나면 소켓 서버로부터 수신받는 코드, 검열 확인 박스를 활성화 시켜야함.
     // ioClient.on("??", function(data) {
     //   this.props.func();
