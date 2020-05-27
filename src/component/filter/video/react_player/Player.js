@@ -26,7 +26,17 @@ class Player extends Component {
       elapsed: 0,
       // sortedLabelArray: this.props.labelArray,
       result: this.props.result,
+
+      adultDropDown: false,
+      bloodDropDown: false,
+      knifeDropDown: false,
+      smokeDropDown: false,
     };
+
+    this.adultDivRef = React.createRef();
+    this.bloodDivRef = React.createRef();
+    this.knifeDivRef = React.createRef();
+    this.smokeDivRef = React.createRef();
   }
 
   load = (url) => {
@@ -90,36 +100,90 @@ class Player extends Component {
     this.player = player;
   };
 
-  printLabelArrayData = () => {
-    const data = this.state.result.labelArray;
-    return data.map((element, index) => {
-      const date1 = new Date(index * 1000);
-      const mm1 = date1.getUTCMinutes();
-      const ss1 = ("0" + date1.getUTCSeconds()).slice(-2);
+  printLabelArrayData = (label) => {
+    if (label === "smoke") {
+      this.props.func([this.adultDivRef, this.bloodDivRef, this.knifeDivRef, this.smokeDivRef]);
+    }
+    const resultCopy = this.state.result;
+    const data = resultCopy.labelArray;
+    const dataCnt = resultCopy.cntArray;
+    const labelNum =
+      label === "adult" ? 0 : label === "blood" ? 1 : label === "knife" ? 2 : 3;
+    console.log(label, labelNum, dataCnt[labelNum]);
+    if (dataCnt[labelNum] > 0) {
+      return data.map((element, index) => {
+        const date1 = new Date(index * 1000);
+        const mm1 = date1.getUTCMinutes();
+        const ss1 = ("0" + date1.getUTCSeconds()).slice(-2);
 
-      const date2 = new Date(index * 1000);
-      const mm2 = date2.getUTCMinutes();
-      const ss2 = ("0" + date2.getUTCSeconds()).slice(-2);
+        const diff = Math.floor(this.state.duration - index);
+        const date2 =
+          diff < 3
+            ? new Date((index + diff) * 1000)
+            : new Date((index + 3) * 1000);
+        const mm2 = date2.getUTCMinutes();
+        const ss2 = ("0" + date2.getUTCSeconds()).slice(-2);
 
-      console.log(`${mm1}:${ss1}`);
-      const diff = Math.floor(this.state.duration - index);
-      if (element) {
-        if (diff < 3) {
-          return (
-            <div id={index} className="Player-scrollbars-element">
-              {index}~{index + diff} : {element}
-            </div>
-          );
+        if (element === label) {
+          if (diff < 3) {
+            return (
+              <div id={index} className="Player-label-time">
+                {`${mm1}:${ss1}`} ~ {`${mm2}:${ss2}`}
+              </div>
+            );
+          } else {
+            return (
+              <div id={index} className="Player-label-time">
+                {`${mm1}:${ss1}`} ~ {`${mm2}:${ss2}`}
+              </div>
+            );
+          }
         } else {
-          return (
-            <div id={index} className="Player-scrollbars-element">
-              {index}~{index + 3} : {element}
-            </div>
-          );
+          return null;
         }
-      } else {
-        return null;
-      }
+      });
+    } else {
+      return (
+        <div className="Player-empty-labels">
+          영상에서 해당 레이블이 검열되지 않음
+        </div>
+      );
+    }
+  };
+
+  adultClickFunc = () => {
+    this.setState({ adultDropDown: !this.state.adultDropDown }, () => {
+      const obj = this.adultDivRef.current;
+      obj.removeAttribute("style");
+      if (!this.state.adultDropDown) obj.style.height = "0";
+      else obj.style.maxHeight = "800px";
+    });
+  };
+
+  bloodClickFunc = () => {
+    this.setState({ bloodDropDown: !this.state.bloodDropDown }, () => {
+      const obj = this.bloodDivRef.current;
+      obj.removeAttribute("style");
+      if (!this.state.bloodDropDown) obj.style.height = "0";
+      else obj.style.maxHeight = "800px";
+    });
+  };
+
+  knifeClickFunc = () => {
+    this.setState({ knifeDropDown: !this.state.knifeDropDown }, () => {
+      const obj = this.knifeDivRef.current;
+      obj.removeAttribute("style");
+      if (!this.state.knifeDropDown) obj.style.height = "0";
+      else obj.style.maxHeight = "800px";
+    });
+  };
+
+  smokeClickFunc = () => {
+    this.setState({ smokeDropDown: !this.state.smokeDropDown }, () => {
+      const obj = this.smokeDivRef.current;
+      obj.removeAttribute("style");
+      if (!this.state.smokeDropDown) obj.style.height = "0";
+      else obj.style.maxHeight = "800px";
     });
   };
 
@@ -158,61 +222,146 @@ class Player extends Component {
           </div>
         </section>
         <div className="Player-info-wrapper">
-          <div className="Player-info-label">
-            <br />
-            <br />
-            <Scrollbars
-              className="Player-scrollbars"
-              style={{ height: 300 }}
-              renderTrackHorizontal={(props) => (
-                <div
-                  {...props}
-                  style={{ display: "none" }}
-                  className="track-horizontal"
-                />
-              )}
+          <div className="Player-info-dropdown" onClick={this.adultClickFunc}>
+            <div className="Player-header">
+              <div className="Player-icon-container">
+                <span className={`Player-dropdown-icon ${
+                    this.state.adultDropDown ? "caret-down" : "caret-right"
+                  }`} />
+              </div>
+              <div className="Player-main-title">Adult</div>
+            </div>
+            <div
+              className={`${
+                this.state.adultDropDown
+                  ? "Player-menu-content"
+                  : "Player-menu-content-closed"
+              }`}
+              ref={this.adultDivRef}
             >
-              {this.printLabelArrayData()}
-            </Scrollbars>
+              <div id="Player-adult">
+                <div className="Player-label-boxes">
+                  <Scrollbars
+                    className="Player-scrollbars"
+                    style={{ width: "100%", height: "80px", textAlign: "left" }}
+                    renderTrackHorizontal={(props) => (
+                      <div
+                        {...props}
+                        style={{ display: "none" }}
+                        className="track-horizontal"
+                      />
+                    )}
+                  >
+                    {this.printLabelArrayData("adult")}
+                  </Scrollbars>
+                </div>
+              </div>
+            </div>
           </div>
-          <table className="Player-info-video">
-            <tbody>
-              <tr>
-                <th>playing</th>
-                <td>{playing ? "true" : "false"}</td>
-              </tr>
-              <tr>
-                <th>volume</th>
-                <td>{volume.toFixed(3)}</td>
-              </tr>
-              <tr>
-                <th>played</th>
-                <td>{played.toFixed(3)}</td>
-              </tr>
-              <tr>
-                <th>loaded</th>
-                <td>{loaded.toFixed(3)}</td>
-              </tr>
-              <tr>
-                <th>duration</th>
-                <td>
-                  <Duration seconds={duration} />
-                </td>
-              </tr>
-              <tr>
-                <th>elapsed</th>
-                <td>
-                  <Duration seconds={duration * played} />
-                </td>
-              </tr>
-              <tr>
-                <th>remaining</th>
-                <td>
-                  <Duration seconds={duration * (1 - played)} />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="Player-info-dropdown" onClick={this.bloodClickFunc}>
+            <div className="Player-header">
+              <div className="Player-icon-container">
+                <span className={`Player-dropdown-icon ${
+                    this.state.bloodDropDown ? "caret-down" : "caret-right"
+                  }`} />
+              </div>
+              <div className="Player-main-title">Blood</div>
+            </div>
+            <div
+              className={`${
+                this.state.bloodDropDown
+                  ? "Player-menu-content"
+                  : "Player-menu-content-closed"
+              }`}
+              ref={this.bloodDivRef}
+            >
+              <div className="Player-label-boxes">
+                <Scrollbars
+                  className="Player-scrollbars"
+                  style={{ width: "100%", height: "80px", textAlign: "left" }}
+                  renderTrackHorizontal={(props) => (
+                    <div
+                      {...props}
+                      style={{ display: "none" }}
+                      className="track-horizontal"
+                    />
+                  )}
+                >
+                  {this.printLabelArrayData("blood")}
+                </Scrollbars>
+              </div>
+            </div>
+          </div>
+          <div className="Player-info-dropdown" onClick={this.knifeClickFunc}>
+            <div className="Player-header">
+              <div className="Player-icon-container">
+                <span
+                  className={`Player-dropdown-icon ${
+                    this.state.knifeDropDown ? "caret-down" : "caret-right"
+                  }`}
+                />
+              </div>
+              <div className="Player-main-title">Knife</div>
+            </div>
+            <div
+              className={`${
+                this.state.knifeDropDown
+                  ? "Player-menu-content"
+                  : "Player-menu-content-closed"
+              }`}
+              ref={this.knifeDivRef}
+            >
+              <div className="Player-label-boxes">
+                <Scrollbars
+                  className="Player-scrollbars"
+                  style={{ width: "100%", height: "80px", textAlign: "left" }}
+                  renderTrackHorizontal={(props) => (
+                    <div
+                      {...props}
+                      style={{ display: "none" }}
+                      className="track-horizontal"
+                    />
+                  )}
+                >
+                  {this.printLabelArrayData("knife")}
+                </Scrollbars>
+              </div>
+            </div>
+          </div>
+          <div className="Player-info-dropdown" onClick={this.smokeClickFunc}>
+            <div className="Player-header">
+              <div className="Player-icon-container">
+                <span className={`Player-dropdown-icon ${
+                    this.state.smokeDropDown ? "caret-down" : "caret-right"
+                  }`} />
+              </div>
+              <div className="Player-main-title">Smoke</div>
+            </div>
+            <div
+              className={`${
+                this.state.smokeDropDown
+                  ? "Player-menu-content"
+                  : "Player-menu-content-closed"
+              }`}
+              ref={this.smokeDivRef}
+            >
+              <div className="Player-label-boxes">
+                <Scrollbars
+                  className="Player-scrollbars"
+                  style={{ width: "100%", height: "80px", textAlign: "left" }}
+                  renderTrackHorizontal={(props) => (
+                    <div
+                      {...props}
+                      style={{ display: "none" }}
+                      className="track-horizontal"
+                    />
+                  )}
+                >
+                  {this.printLabelArrayData("smoke")}
+                </Scrollbars>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
