@@ -24,7 +24,6 @@ class Player extends Component {
       ended: false,
       checkedIdx: null,
       elapsed: 0,
-      // sortedLabelArray: this.props.labelArray,
       result: this.props.result,
 
       adultDropDown: false,
@@ -102,7 +101,7 @@ class Player extends Component {
 
   printLabelArrayData = (label) => {
     if (label === "smoke") {
-      this.props.func([this.adultDivRef, this.bloodDivRef, this.knifeDivRef, this.smokeDivRef]);
+      this.props.func([this.adultDivRef.current, this.bloodDivRef.current, this.knifeDivRef.current, this.smokeDivRef.current]);
     }
     const resultCopy = this.state.result;
     const data = resultCopy.labelArray;

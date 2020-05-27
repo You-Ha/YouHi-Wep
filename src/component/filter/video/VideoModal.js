@@ -20,24 +20,25 @@ const VideoModal = ({ isOpen, close, result }) => {
 
   useEffect(() => {
     allTabRef.current.addEventListener('click', (event) => {
-      ref[0].current.click();
-      ref[1].current.click();
-      ref[2].current.click();
-      ref[3].current.click();
+      ref[0].click();
+      ref[1].click();
+      ref[2].click();
+      ref[3].click();
     })
     adultTabRef.current.addEventListener('click', () => {
-      ref[0].current.click();
+      console.log("hi");
+      ref[0].click();
     })
     bloodTabRef.current.addEventListener('click', () => {
-      ref[1].current.click();
+      ref[1].click();
     })
     knifeTabRef.current.addEventListener('click', () => {
-      ref[2].current.click();
+      ref[2].click();
     })
     smokeTabRef.current.addEventListener('click', () => {
-      ref[3].current.click();
+      ref[3].click();
     })
-  });
+  },[ref]);
 
   return (
     <div>
