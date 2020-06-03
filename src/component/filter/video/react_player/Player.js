@@ -22,7 +22,7 @@ class Player extends Component {
       loop: false,
 
       ended: false,
-      checkedIdx: null,
+      checkedTime: null,
       elapsed: 0,
       result: this.props.result,
 
@@ -59,22 +59,43 @@ class Player extends Component {
     console.log("onProgress", state);
     var condition = false;
     const data = this.state.result.labelArray;
-    const checkedIdx = this.state.checkedIdx;
-    const compareValue = Math.floor(state.playedSeconds);
-    if (this.state.playing && data[compareValue] !== undefined) {
-      document.getElementById(compareValue).style.fontWeight = "900";
+    const checkedTime = this.state.checkedTime;
+    const current = Math.floor(state.playedSeconds);
+
+    if (this.state.playing && data[current] !== undefined) {
+      if (data[current] === "adult") {
+        document.getElementById("0").style.backgroundColor = "red";
+      } else if (data[current] === "blood") {
+        document.getElementById("1").style.backgroundColor = "red";
+      } else if (data[current] === "knife") {
+        document.getElementById("2").style.backgroundColor = "red";
+      } else if (data[current] === "smoke") {
+        document.getElementById("3").style.backgroundColor = "red";
+      }
       condition = true;
     }
-    if (checkedIdx !== null && compareValue > checkedIdx + 2) {
-      document.getElementById(checkedIdx).style.fontWeight = "300";
+
+    if (checkedTime !== null && current - checkedTime === 3) {
+      if (data[checkedTime] === "adult") {
+        document.getElementById("0").style.backgroundColor = "";
+      } else if (data[checkedTime] === "blood") {
+        document.getElementById("1").style.backgroundColor = "";
+      } else if (data[checkedTime] === "knife") {
+        document.getElementById("2").style.backgroundColor = "";
+      } else if (data[checkedTime] === "smoke") {
+        document.getElementById("3").style.backgroundColor = "";
+      }
     }
     if (condition) {
-      this.setState({ checkedIdx: compareValue });
+      this.setState({ checkedTime: current });
     }
 
-    if (this.state.ended) {
-      document.getElementById(checkedIdx).style.fontWeight = "300";
-    }
+    // if (this.state.ended) {
+    //   document.getElementById("0").style.fontWeight = "";
+    //   document.getElementById("1").style.fontWeight = "";
+    //   document.getElementById("2").style.fontWeight = "";
+    //   document.getElementById("3").style.fontWeight = "";
+    // }
 
     if (!this.state.seeking) {
       this.setState({ state: state, played: state.played });
@@ -100,9 +121,6 @@ class Player extends Component {
   };
 
   printLabelArrayData = (label) => {
-    if (label === "smoke") {
-      this.props.func([this.adultDivRef.current, this.bloodDivRef.current, this.knifeDivRef.current, this.smokeDivRef.current]);
-    }
     const resultCopy = this.state.result;
     const data = resultCopy.labelArray;
     const dataCnt = resultCopy.cntArray;
@@ -126,13 +144,13 @@ class Player extends Component {
         if (element === label) {
           if (diff < 3) {
             return (
-              <div id={index} className="Player-label-time">
+              <div className="Player-label-time">
                 {`${mm1}:${ss1}`} ~ {`${mm2}:${ss2}`}
               </div>
             );
           } else {
             return (
-              <div id={index} className="Player-label-time">
+              <div className="Player-label-time">
                 {`${mm1}:${ss1}`} ~ {`${mm2}:${ss2}`}
               </div>
             );
@@ -185,6 +203,10 @@ class Player extends Component {
       else obj.style.maxHeight = "800px";
     });
   };
+
+  componentDidMount() {
+    this.props.func([this.adultDivRef.current, this.bloodDivRef.current, this.knifeDivRef.current, this.smokeDivRef.current]);
+  }
 
   render() {
     const {
@@ -358,6 +380,7 @@ class Player extends Component {
                 >
                   {this.printLabelArrayData("smoke")}
                 </Scrollbars>
+                {this.props.func2([this.state.adultDropDown, this.state.bloodDropDown, this.state.knifeDropDown, this.state.smokeDropDown])}
               </div>
             </div>
           </div>

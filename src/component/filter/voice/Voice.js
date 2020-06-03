@@ -14,15 +14,16 @@ class Voice extends Component {
   }
 
   go = async () => {
+    const clientID = this.props.clientID;
     var res,
       data,
       swearArrayCopy = [],
       imgArrayCopy = [];
-    res = await fetch("./static/0/img/img_result.txt");
+    res = await fetch(`./static/${clientID}/subtitle_result.txt`);
     data = await res.text();
     imgArrayCopy = data.length ? this.returnimgArray(data) : imgArrayCopy;
 
-    res = await fetch("./static/0/sound_filter_result.txt");
+    res = await fetch(`./static/${clientID}/${clientID}_filter.txt`);
     data = await res.text();
     swearArrayCopy = data.length ? this.returnSwearArray(data) : swearArrayCopy;
 
@@ -37,26 +38,34 @@ class Voice extends Component {
   };
 
   returnimgArray = (data) => {
+    console.log(data);
     const dataArray = data.split("\n");
     return dataArray;
   }
 
   returnSwearArray = (data) => {
-    const dataArray = data.split("\n");
     var copy = [];
-    var i = 0;
-    for (; i < dataArray.length; i++) {
-      const dataArrayElement = dataArray[i].split("/");
-      copy.push([[dataArrayElement[0].trim()], [dataArrayElement[1].trim()], [dataArrayElement[2].trim()]])
+    if (data[0] !== "<") {
+      const dataArray = data.split("\n");
+      var i = 0;
+      for (; i < dataArray.length; i++) {
+        const dataArrayElement = dataArray[i].split("/");
+        console.log(dataArrayElement);
+        copy.push([[dataArrayElement[0].trim()], [dataArrayElement[1].trim()]])
+      }
+    } else {
+      copy.push("There's no result!");
     }
     return copy;
   }
 
   openModal = () => {
+    document.querySelector("body").style.overflow = "hidden";
     this.setState({ isModalOpen: true });
   };
 
   closeModal = () => {
+    document.querySelector("body").style.overflow = "";
     this.setState({ isModalOpen: false });
   };
 
@@ -78,7 +87,6 @@ class Voice extends Component {
       <div className="Voice">
         <button
           className="Filter-box Filter-voice-filter"
-          disabled={!this.props.successfulFiltered}
           onClick={() => {
             this.openModal();
             this.go();

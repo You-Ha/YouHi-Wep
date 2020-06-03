@@ -19,41 +19,32 @@ class Video extends Component {
   }
 
   go = async () => {
+    const clientID = this.props.clientID;
     var res,
       data,
       result = { labelArray: [], cntArray: [] };
-    res = await fetch("./static/0/adult_result.txt");
+    res = await fetch(`./static/${clientID}/adult_result.txt`);
     data = await res.text();
     result = data.length ? this.collectLabelData(result, data, "adult") : this.addZero(result);
 
-    res = await fetch("./static/0/blood_result.txt");
+    res = await fetch(`./static/${clientID}/blood_result.txt`);
     data = await res.text();
     result = data.length ? this.collectLabelData(result, data, "blood") : this.addZero(result);
 
-    res = await fetch("./static/0/knife_result.txt");
+    res = await fetch(`./static/${clientID}/knife_result.txt`);
     data = await res.text();
     result = data.length ? this.collectLabelData(result, data, "knife") : this.addZero(result);
 
-    res = await fetch("./static/0/smoke_result.txt");
+    res = await fetch(`./static/${clientID}/smoke_result.txt`);
     data = await res.text();
     result = data.length ? this.collectLabelData(result, data, "smoke") : this.addZero(result);
 
     this.setState(
       {
-        // labelArray: result.copy,
-        // adultCnt: adultCnt,
-        // bloodCnt: bloodCnt,
-        // knifeCnt: knifeCnt,
-        // smokeCnt: smokeCnt,
         result: result,
         check: true,
       },
       () => {
-        // console.log(this.state.labelArray);
-        // console.log(this.state.adultCnt);
-        // console.log(this.state.bloodCnt);
-        // console.log(this.state.knifeCnt);
-        // console.log(this.state.smokeCnt);
         console.log(this.state.result.labelArray);
         console.log(this.state.result.cntArray);
       }
@@ -68,20 +59,26 @@ class Video extends Component {
 
   collectLabelData = (result, data, label) => {
     var resultCopy = result;
-    const dataArray = data.split("\n");
-    var i = 0;
-    for (; i < dataArray.length; i++) {
-      resultCopy.labelArray[parseInt(dataArray[i])] = label;
+    if (data[0] !== "<") {
+      const dataArray = data.split("\n");
+      var i = 0;
+      for (; i < dataArray.length; i++) {
+        resultCopy.labelArray[parseInt(dataArray[i])] = label;
+      }
+      resultCopy.cntArray.push(dataArray.length);
+    } else {
+      resultCopy.cntArray.push(0);
     }
-    resultCopy.cntArray.push(dataArray.length);
     return resultCopy;
   };
 
   openModal = () => {
+    document.querySelector("body").style.overflow = "hidden";
     this.setState({ isModalOpen: true });
   };
 
   closeModal = () => {
+    document.querySelector("body").style.overflow = "";
     this.setState({ isModalOpen: false });
   };
 
@@ -103,7 +100,6 @@ class Video extends Component {
       <div className="Video">
         <button
           className="Filter-box Filter-video-filter"
-          disabled={!this.props.successfulFiltered}
           onClick={() => {
             this.openModal();
             this.go();

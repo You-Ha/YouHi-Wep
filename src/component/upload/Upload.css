@@ -115,9 +115,11 @@
 }
 
 .Actions {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   margin-top: 20px;
+  justify-content: flex-end;
+  width: 310px;
 }
 
 .Title {
@@ -218,7 +220,6 @@
   user-select: none;
   border: 0;
   border-radius: 100px;
-  /* background: rgba(103, 58, 183, 1); */
   background: rgb(99, 68, 198);
   color: #fff;
   outline: 0;
@@ -227,4 +228,47 @@
 button:disabled {
   background: rgb(189, 189, 189);
   cursor: default;
+}
+
+.loading-spinner {
+  margin-left: 10px;
+  pointer-events: none;
+}
+
+.hide {
+  display: none !important;
+  /* height: 0; */
+}
+
+.test-icon {
+  background-image: url("../../img/loading-icon.png");
+  width: 30px;
+  height: 30px;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.loading-spinner .loading-spinner-icon {
+  animation: spinIcon 2.33s linear infinite;
+}
+
+@keyframes spinIcon  {
+  0% {
+    transform: rotateZ(0deg);
+  } 
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.test-class {
+  display: flex;
+}
+
+.wrap {
+  width: 100%;
 }

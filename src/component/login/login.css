@@ -1,0 +1,34 @@
+.login-style {
+  display: flex;
+  flex-direction: flex-start;
+  /* align-items: center; */
+  flex-direction: column;
+  /* background-color: lightgray; */
+}
+
+.login-name {
+  border-bottom: 1px dotted gray;
+  padding: 15px;
+  position: relative;
+}
+
+.name-label {
+}
+
+.login-Email {
+  border-bottom: 1px dotted gray;
+  padding: 15px;
+}
+
+.login-message {
+  border-bottom: 1px dotted gray;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.login-send {
+  position: relative;
+  left: 300px;
+  width: 80px;
+  height: 100px;
+}

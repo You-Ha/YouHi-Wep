@@ -3,32 +3,74 @@ import FilterElement from "./filter_elementor/FilterElementor";
 import "./Filter.css";
 import VideoBox from "./video/Video";
 import VoiceBox from "./voice/Voice";
+import Feedback from "../feedback/Feedback";
 
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      socketConnection: false,
+
+    };
+    this.filterWrapperRef = React.createRef();
   }
+
+  notYetText = () => {
+    if (!this.props.showResult[0]) {
+      return (
+        <div className="Filter-not-yet">
+          결과는 검열이 끝난 후 확인 가능합니다.
+        </div>
+      );
+    }
+  };
+
+  componentDidUpdate() {
+      const obj = this.filterWrapperRef.current;
+      obj.removeAttribute("style");
+      if (!this.props.showResult[0]) 
+        obj.style.height = "0";
+      else 
+        obj.style.maxHeight = "800px";
+  }
+  
 
   render() {
     return (
       <div className="Filter-container">
+        {/* <button
+          onClick={() => {
+            this.setState(
+              { socketConnection: !this.state.socketConnection },
+              () => {
+                const obj = this.filterWrapperRef.current;
+                obj.removeAttribute("style");
+                if (!this.state.socketConnection) obj.style.height = "0";
+                else obj.style.maxHeight = "800px";
+              }
+            );
+          }}
+        >
+          test2
+        </button> */}
         <FilterElement />
-        <div className="filter-wrapper">
+        {this.notYetText()}
+        <div
+          className={`${
+            this.props.showResult[0] ? "Filter-wrapper" : "Filter-wrapper-closed"
+          }`}
+          ref={this.filterWrapperRef}
+        >
           <div className="Filter-filter-box">
             <div className="inner-filter-wrapper">
-              <VideoBox successfulFiltered={this.props.successfulFiltered}/>
+              <VideoBox clientID={this.props.showResult[1]} />
             </div>
             <div className="inner-filter-wrapper">
-              <VoiceBox successfulFiltered={this.props.successfulFiltered}/>
+              <VoiceBox clientID={this.props.showResult[1]} />
             </div>
           </div>
         </div>
-        <div className="Filter-feedback-button-wrapper">
-          <button className="Filter-feedback-button">
-            이의신청 및 문의하기
-          </button>
-        </div>
+        <Feedback />
       </div>
     );
   }

@@ -5,6 +5,8 @@ import "./VideoModal.css";
 
 const VideoModal = ({ isOpen, close, result }) => {
   var ref = new Array(4);
+  var dropDown = new Array(4);
+
   const allTabRef = useRef(null);
   const adultTabRef = useRef(null);
   const bloodTabRef = useRef(null);
@@ -18,15 +20,34 @@ const VideoModal = ({ isOpen, close, result }) => {
     ref[3] = paramRef[3];
   }
 
+  const setDropDown = (paramDropDown) => {
+    dropDown[0] = paramDropDown[0];
+    dropDown[1] = paramDropDown[1];
+    dropDown[2] = paramDropDown[2];
+    dropDown[3] = paramDropDown[3];
+  }
+
   useEffect(() => {
     allTabRef.current.addEventListener('click', (event) => {
-      ref[0].click();
-      ref[1].click();
-      ref[2].click();
-      ref[3].click();
+
+      // 만약 라벨 dropdown 값이 true라면 클릭하면 안된다.
+      if (dropDown[0] && dropDown[1] && dropDown[2] && dropDown[3]) { // 모두 열려있는 경우..
+        ref[0].click();
+        ref[1].click();
+        ref[2].click();
+        ref[3].click();
+      } else {  // 모두 열려있지 않은 상황이라면, 각자 값에 따라 열어주거나 닫기..
+        if (!dropDown[0])
+          ref[0].click();
+        if (!dropDown[1])
+          ref[1].click();
+        if (!dropDown[2])
+          ref[2].click();
+        if (!dropDown[3])
+          ref[3].click();
+      }
     })
     adultTabRef.current.addEventListener('click', () => {
-      console.log("hi");
       ref[0].click();
     })
     bloodTabRef.current.addEventListener('click', () => {
@@ -38,7 +59,7 @@ const VideoModal = ({ isOpen, close, result }) => {
     smokeTabRef.current.addEventListener('click', () => {
       ref[3].click();
     })
-  },[ref]);
+  });
 
   return (
     <div>
@@ -56,31 +77,37 @@ const VideoModal = ({ isOpen, close, result }) => {
                 <div className="VideoModal-tab" ref={allTabRef}>
                   {getLabelsCnt(result.cntArray)}
                   <div className="VideoModal-tab-subtitle">전체 결과</div>
+                  <div className="VideoModal-selected-indicator" />
                 </div>
                 <div className="VideoModal-tab" ref={adultTabRef}>
                   {result.cntArray[0]}
                   <div className="VideoModal-tab-subtitle">Adult</div>
+                  <div id="0" className="VideoModal-selected-indicator" />
                 </div>
                 <div className="VideoModal-tab" ref={bloodTabRef}>
                   {result.cntArray[1]}
                   <div className="VideoModal-tab-subtitle">Blood</div>
+                  <div id="1" className="VideoModal-selected-indicator" />
                 </div>
                 <div className="VideoModal-tab" ref={knifeTabRef}>
                   {result.cntArray[2]}
                   <div className="VideoModal-tab-subtitle">Knife</div>
+                  <div id="2" className="VideoModal-selected-indicator" />
                 </div>
                 <div className="VideoModal-tab" ref={smokeTabRef}>
                   {result.cntArray[3]}
                   <div className="VideoModal-tab-subtitle">Smoke</div>
+                  <div id="3" className="VideoModal-selected-indicator" />
                 </div>
               </div>
               <div className="VideoModal-video-wrapper">
-                <Player result={result} func={setRef} />
+                <Player result={result} func={setRef} func2={setDropDown} />
               </div>
             </div>
             <div className="button-wrap">
-              <button onClick={close}>Confirm</button>
-            </div>
+              <button onClick={close}>확인</button>
+            </div>                {console.log(adultTabRef.current, bloodTabRef.current, knifeTabRef.current, smokeTabRef.current)}
+
           </div>
         </ReactTransitionGroup>
       ) : (
