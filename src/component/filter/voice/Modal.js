@@ -3,7 +3,7 @@ import "./Modal.css";
 import ReactTransitionGroup from "react-addons-css-transition-group";
 import { Scrollbars } from "react-custom-scrollbars";
 
-const Modal = ({ isOpen, close, imgArray, swearArray }) => {
+const Modal = ({ isOpen, close, imgArray, swearArray, clientID }) => {
   const aRef = useRef(null);
 
   const buttonClickEvent = () => {
@@ -48,15 +48,15 @@ const Modal = ({ isOpen, close, imgArray, swearArray }) => {
                     />
                   )}
                 >
-                  {printSwearArrayData(swearArray)}
+                  {printSwearArrayData(swearArray, clientID)}
                 </Scrollbars>
                 <div className="Modal-buttons">
-                  <audio controls src="./static/0/0_mute.wav">
+                  <audio controls src={`./static/${clientID}/${clientID}_mute.wav`}>
                     Your browser does not support the
                     <code>audio</code> element.
                   </audio>
                   <button className="Modal-download-button" onClick={buttonClickEvent}>
-                    다운로드 <a ref={aRef} href="./static/0/0_mute.wav"> </a>
+                    다운로드 <a ref={aRef} href={`./static/${clientID}/${clientID}_mute.wav`}> </a>
                   </button>
                   <ul className="Modal-buttons-description">
                     <li>검열된 음성은 플레이어를 이용하<br />여 들을 수 있습니다.</li>
@@ -82,12 +82,12 @@ const Modal = ({ isOpen, close, imgArray, swearArray }) => {
 };
 export default Modal;
 
-const printImgArrayData = (imgArray) => {
+const printImgArrayData = (imgArray, clientID) => {
   const data = imgArray;
   if (data.length !== 0) {
     return data.map((element, index) => {
       const id = `img_${index}`;
-      const src = `./static/${this.props.clientID}/subtitle_img/${element}`;
+      const src = `./static/${clientID}/subtitle_img/${element}`;
       if (element) {
         return (
           <div id={id} className="Modal-scrollbars-left-element">

@@ -3,7 +3,7 @@ import ReactTransitionGroup from "react-addons-css-transition-group";
 import Player from "./react_player/Player";
 import "./VideoModal.css";
 
-const VideoModal = ({ isOpen, close, result }) => {
+const VideoModal = ({ isOpen, close, result, clientID }) => {
   var ref = new Array(4);
   var dropDown = new Array(4);
 
@@ -101,7 +101,7 @@ const VideoModal = ({ isOpen, close, result }) => {
                 </div>
               </div>
               <div className="VideoModal-video-wrapper">
-                <Player result={result} func={setRef} func2={setDropDown} clientID={this.props.clientID} />
+                <Player result={result} func={setRef} func2={setDropDown} clientID={clientID} />
               </div>
             </div>
             <div className="button-wrap">
