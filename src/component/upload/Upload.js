@@ -10,8 +10,8 @@ var signedURL;
 var account;
 
 // const io = require("socket.io-client");
-// const ioClient = io.connect("http://13.209.93.181:4567");
-const ioClient = io.connect("http://localhost:4567");
+const ioClient = io.connect("http://13.209.93.181:4567");
+// const ioClient = io.connect("http://localhost:4567");
 
 class Upload extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class Upload extends Component {
     ioClient.on("number", function (data) {
       this.setState({ account: data });
     }.bind(this));
-    ioClient.emit("complete", `hi`); //lambda event
+    // ioClient.emit("complete", `hi`); //lambda event
     ioClient.on("upload", function (data) {
       console.log(data);
       this.setState({ filterButtonDisable: false });
@@ -146,7 +146,7 @@ class Upload extends Component {
 
     const clientID = this.state.account.value;
     // 검열을 시작하라는 이벤트를 등록한다.
-    ioClient.emit("filter", `${clientID}`);
+    ioClient.emit("filter", `${clientID}.mp4`);
 
     ioClient.on("result", function (data) {
       console.log(data);

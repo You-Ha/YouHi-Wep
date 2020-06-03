@@ -87,7 +87,7 @@ const printImgArrayData = (imgArray) => {
   if (data.length !== 0) {
     return data.map((element, index) => {
       const id = `img_${index}`;
-      const src = `./static/0/subtitle_img/${element}`;
+      const src = `./static/${this.props.clientID}/subtitle_img/${element}`;
       if (element) {
         return (
           <div id={id} className="Modal-scrollbars-left-element">

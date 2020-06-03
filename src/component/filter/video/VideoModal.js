@@ -101,7 +101,7 @@ const VideoModal = ({ isOpen, close, result }) => {
                 </div>
               </div>
               <div className="VideoModal-video-wrapper">
-                <Player result={result} func={setRef} func2={setDropDown} />
+                <Player result={result} func={setRef} func2={setDropDown} clientID={this.props.clientID} />
               </div>
             </div>
             <div className="button-wrap">

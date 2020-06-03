@@ -8,7 +8,7 @@ class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: "./static/0/0.mp4",
+      url: `./static/${this.props.clientID}/${this.props.clientID}.mp4`,
       pip: false,
       playing: false,
       controls: false,

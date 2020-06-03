@@ -77,6 +77,7 @@ class Voice extends Component {
           close={this.closeModal}
           imgArray={this.state.imgArray}
           swearArray={this.state.swearArray}
+          clientID={this.props.clientID}
         />
       );
     }

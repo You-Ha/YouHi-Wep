@@ -90,6 +90,7 @@ class Video extends Component {
           close={this.closeModal}
           // labelArray={this.state.labelArray}
           result={this.state.result}
+          clientID={this.props.clientID}
         />
       );
     }
