@@ -32,6 +32,11 @@ class Player extends Component {
       smokeDropDown: false,
     };
 
+    this.adultDivWrapper = React.createRef();
+    this.bloodDivWrapper = React.createRef();
+    this.knifeDivWrapper = React.createRef();
+    this.smokeDivWrapper = React.createRef();
+
     this.adultDivRef = React.createRef();
     this.bloodDivRef = React.createRef();
     this.knifeDivRef = React.createRef();
@@ -126,7 +131,6 @@ class Player extends Component {
     const dataCnt = resultCopy.cntArray;
     const labelNum =
       label === "adult" ? 0 : label === "blood" ? 1 : label === "knife" ? 2 : 3;
-    console.log(label, labelNum, dataCnt[labelNum]);
     if (dataCnt[labelNum] > 0) {
       return data.map((element, index) => {
         const date1 = new Date(index * 1000);
@@ -205,7 +209,34 @@ class Player extends Component {
   };
 
   componentDidMount() {
-    this.props.func([this.adultDivRef.current, this.bloodDivRef.current, this.knifeDivRef.current, this.smokeDivRef.current]);
+    console.log("componentDidMount");
+    this.props.func([
+      this.adultDivWrapper.current,
+      this.bloodDivWrapper.current,
+      this.knifeDivWrapper.current,
+      this.smokeDivWrapper.current,
+    ]);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const condition =
+      prevState.adultDropDown !== this.state.adultDropDown ||
+      prevState.bloodDropDown !== this.state.bloodDropDown ||
+      prevState.knifeDropDown !== this.state.knifeDropDown ||
+      prevState.smokeDropDown !== this.state.smokeDropDown;
+    if (condition) {
+      console.log("componentDidUpdate");
+      console.log(this.state.adultDropDown);
+      console.log(this.state.bloodDropDown);
+      console.log(this.state.knifeDropDown);
+      console.log(this.state.smokeDropDown);
+      this.props.func2([
+        this.state.adultDropDown,
+        this.state.bloodDropDown,
+        this.state.knifeDropDown,
+        this.state.smokeDropDown,
+      ]);
+    }
   }
 
   render() {
@@ -243,12 +274,18 @@ class Player extends Component {
           </div>
         </section>
         <div className="Player-info-wrapper">
-          <div className="Player-info-dropdown" onClick={this.adultClickFunc}>
+          <div
+            className="Player-info-dropdown"
+            onClick={this.adultClickFunc}
+            ref={this.adultDivWrapper}
+          >
             <div className="Player-header">
               <div className="Player-icon-container">
-                <span className={`Player-dropdown-icon ${
+                <span
+                  className={`Player-dropdown-icon ${
                     this.state.adultDropDown ? "caret-down" : "caret-right"
-                  }`} />
+                  }`}
+                />
               </div>
               <div className="Player-main-title">Adult</div>
             </div>
@@ -279,12 +316,18 @@ class Player extends Component {
               </div>
             </div>
           </div>
-          <div className="Player-info-dropdown" onClick={this.bloodClickFunc}>
+          <div
+            className="Player-info-dropdown"
+            onClick={this.bloodClickFunc}
+            ref={this.bloodDivWrapper}
+          >
             <div className="Player-header">
               <div className="Player-icon-container">
-                <span className={`Player-dropdown-icon ${
+                <span
+                  className={`Player-dropdown-icon ${
                     this.state.bloodDropDown ? "caret-down" : "caret-right"
-                  }`} />
+                  }`}
+                />
               </div>
               <div className="Player-main-title">Blood</div>
             </div>
@@ -313,7 +356,11 @@ class Player extends Component {
               </div>
             </div>
           </div>
-          <div className="Player-info-dropdown" onClick={this.knifeClickFunc}>
+          <div
+            className="Player-info-dropdown"
+            onClick={this.knifeClickFunc}
+            ref={this.knifeDivWrapper}
+          >
             <div className="Player-header">
               <div className="Player-icon-container">
                 <span
@@ -349,12 +396,18 @@ class Player extends Component {
               </div>
             </div>
           </div>
-          <div className="Player-info-dropdown" onClick={this.smokeClickFunc}>
+          <div
+            className="Player-info-dropdown"
+            onClick={this.smokeClickFunc}
+            ref={this.smokeDivWrapper}
+          >
             <div className="Player-header">
               <div className="Player-icon-container">
-                <span className={`Player-dropdown-icon ${
+                <span
+                  className={`Player-dropdown-icon ${
                     this.state.smokeDropDown ? "caret-down" : "caret-right"
-                  }`} />
+                  }`}
+                />
               </div>
               <div className="Player-main-title">Smoke</div>
             </div>
@@ -380,7 +433,6 @@ class Player extends Component {
                 >
                   {this.printLabelArrayData("smoke")}
                 </Scrollbars>
-                {this.props.func2([this.state.adultDropDown, this.state.bloodDropDown, this.state.knifeDropDown, this.state.smokeDropDown])}
               </div>
             </div>
           </div>

@@ -45,8 +45,8 @@ class Video extends Component {
         check: true,
       },
       () => {
-        console.log(this.state.result.labelArray);
-        console.log(this.state.result.cntArray);
+        // console.log(this.state.result.labelArray);
+        // console.log(this.state.result.cntArray);
       }
     );
   };

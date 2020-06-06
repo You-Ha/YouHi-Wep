@@ -33,7 +33,7 @@ const Modal = ({ isOpen, close, imgArray, swearArray, clientID }) => {
                   />
                 )}
               >
-                {printImgArrayData(imgArray)}
+                {printImgArrayData(imgArray, clientID)}
               </Scrollbars>
               <div className="Modal-vertical-line" />
               <div className="Modal-right">
@@ -48,7 +48,7 @@ const Modal = ({ isOpen, close, imgArray, swearArray, clientID }) => {
                     />
                   )}
                 >
-                  {printSwearArrayData(swearArray, clientID)}
+                  {printSwearArrayData(swearArray)}
                 </Scrollbars>
                 <div className="Modal-buttons">
                   <audio controls src={`./static/${clientID}/${clientID}_mute.wav`}>
@@ -83,6 +83,7 @@ const Modal = ({ isOpen, close, imgArray, swearArray, clientID }) => {
 export default Modal;
 
 const printImgArrayData = (imgArray, clientID) => {
+  console.log(clientID);
   const data = imgArray;
   if (data.length !== 0) {
     return data.map((element, index) => {

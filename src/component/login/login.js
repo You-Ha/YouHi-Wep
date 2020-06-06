@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "emailjs-com";
 import "./login.css";
 
-export default function Login() {
+const Login = ({ func }) => {
+  const [file, setFile] = useState(null);
+  const submitButtonRef = useRef(null);
+
   function sendEmail(e) {
     e.preventDefault();
     console.log(e.target);
     emailjs
       .sendForm(
-        "sungsoo",
-        "template_Q0qHMblF",
+        "gmail",
+        "template_Qluu9LSn",
         e.target,
-        "user_nns6wf4RlzAWsOeqnBEbr"
+        "user_Rt0JXi92RLGoTk0lybQIX"
       )
       .then(
         (result) => {
@@ -22,24 +25,83 @@ export default function Login() {
         }
       );
   }
+
+  const onFilesAdded = (evt) => {
+    const file = evt.target.files;
+    setFile(file);
+    console.log("file", file);
+  }
+
+  useEffect(() => {
+    func(submitButtonRef.current);
+    
+  });
+
   return (
-    <form className="login-style" method="post" onSubmit={sendEmail}>
-      {" "}
-      <input type="hidden" name="contact_number" />
-      <div className="login-name">
-        <label>Name </label> <input type="text" name="user_name" />
-      </div>
-      <div className="login-Email">
-        <label>Email </label> <input type="email" name="user_email" />
-      </div>
-      <div className="fileAttachment">
-        <label>Attach file:</label>
-        <input type="file" name="user_file" />
-      </div>
-      <div className="login-message">
-        <label>Message </label> <textarea name="message" />
-      </div>
-      <input className="login-send" size="30" type="submit" value="Submit" />{" "}
-    </form>
+    <div className="Login">
+      <form className="Login-form" method="post" onSubmit={sendEmail}>
+        <div className="Login-category">
+          <div className="Login-title">이름</div>
+          <div className="Login-input-container-wrapper">
+            <div className="Login-input-container">
+              <input className="Login-input" type="text" name="user_name" />
+            </div>
+          </div>
+        </div>
+        <div className="Login-category">
+          <div className="Login-title">이메일 주소</div>
+          <div className="Login-input-container-wrapper">
+            <div className="Login-input-container">
+              <input
+                className="Login-input"
+                type="email"
+                name="user_email"
+                placeholder="example@gmail.com"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="Login-category">
+          <div className="Login-title">휴대폰 번호</div>
+          <div className="Login-input-container-wrapper">
+            <div className="Login-input-container">
+              <input
+                className="Login-input"
+                type="text"
+                name="user_phone"
+                placeholder="010-1234-5678"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="Login-category">
+          <div className="Login-title">파일 첨부</div>
+          <div className="Login-attachment-wrapper">
+            <div className="Login-attachment">
+              <span className="txt-placeholder">{file !== null ? file[0].name : "첨부파일 추가"}</span>
+              <span className="Login-attachment-icon" />
+              <input type="file" name="user_file" onChange={onFilesAdded}/>
+            </div>
+          </div>
+        </div>
+        <div className="Login-category">
+          <div className="Login-title">문의 내용</div>
+          <div className="Login-input-container-wrapper">
+            <div className="Login-input-container Login-textarea">
+              <textarea className="Login-input" name="message" />
+            </div>
+          </div>
+        </div>
+        <input
+          ref={submitButtonRef}
+          className="Login-send"
+          type="submit"
+          value="Submit"
+          style={{ display: "none" }}
+        />
+      </form>
+    </div>
   );
-}
+};
+
+export default Login;
